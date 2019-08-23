@@ -1,0 +1,11 @@
+--- ahf-v1.0-100/src/libio/Makefile
++++ ahf-v1.0-100/src/libio/Makefile
+@@ -235,7 +235,7 @@
+ 	$(CC) $(CFLAGS) -c -o io_read_fortran.o io_read_fortran.c										
+ 
+ io_util.o: io_util.h io_file.h io_util.c
+-	$(CC) $(CFLAGS) -c -o io_util.o io_util.c -L${LIB_HDF5} -I${INC_HDF5}
++	$(CC) $(CFLAGS) -c -o io_util.o io_util.c
+ 
+ io_paramter.o: io_parameter.h \
+                io_parameter_def.h io_util.h \

@@ -1,0 +1,20 @@
+[AHF]
+ic_filename = FIRE_M12i_ref11/snapshot_600.hdf5
+ic_filetype = 50
+outfile_prefix = snapshot_600
+
+LgridDomain       = 64
+LgridMax          = 16777216
+NperDomCell       = 2.0
+NperRefCell       = 2.5
+VescTune          = 1.5
+NminPerHalo       = 20
+RhoVir            = 0
+Dvir              = 200
+MaxGatherRad      = 3.0
+LevelDomainDecomp = 6
+NcpuReading       = 1
+
+[GIZMO]
+GIZMO_LUNIT = 1e-3
+GIZMO_MUNIT = 1e10

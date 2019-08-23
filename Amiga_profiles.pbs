@@ -1,0 +1,31 @@
+#!/bin/sh
+#SBATCH -J amiga_halo_$3
+#SBATCH -p skx-normal
+#SBATCH -t 02:00:00
+#SBATCH N 1
+#SBATCH n 1
+#SBATCH -A TG-AST120025
+#SBATCH --mail-user=cchoban@ucsd.edu
+#SBATCH --mail-type=all
+#SBATCH -o gizmo.log
+#SBATCH --export=ALL
+#SBATCH -D .
+set -e
+pwd
+date
+source ./activate.sh
+
+MAIN_DIR=$1
+export OMP_NUM_THREADS=$2
+STARTNUM=$3
+ENDNUM=$4
+
+
+# Directory of snapshots
+SNAP_DIR=$(MAIN_DIR)'output/'
+# Directory to output AHF data
+OUTPUT_DIR=$(MAIN_DIR)'AHF_data/AHF_output/'
+# Directory of the AMIGA exe file
+AMIGA_DIR=$(MAIN_DIR)'AHF_data/AHF/run/'
+
+python amigascript.py $SNAP_DIR $OUTPUT_DIR $AMIGA_DIR $STARTNUM $ENDNUM
