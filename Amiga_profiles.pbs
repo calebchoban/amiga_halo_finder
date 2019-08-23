@@ -1,19 +1,19 @@
 #!/bin/sh
-#SBATCH -J amiga_halo_$3
-#SBATCH -p skx-normal
+#SBATCH -J amiga_halo_array
+#SBATCH -p skx-dev
 #SBATCH -t 02:00:00
-#SBATCH N 1
-#SBATCH n 1
+#SBATCH -N 1
+#SBATCH -n 1
 #SBATCH -A TG-AST120025
 #SBATCH --mail-user=cchoban@ucsd.edu
 #SBATCH --mail-type=all
-#SBATCH -o gizmo.log
+#SBATCH -o amiga.log
 #SBATCH --export=ALL
 #SBATCH -D .
 set -e
 pwd
 date
-source ./activate.sh
+source ./module-reset.sh
 
 MAIN_DIR=$1
 export OMP_NUM_THREADS=$2
