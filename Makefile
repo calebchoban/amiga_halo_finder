@@ -1,7 +1,7 @@
 # These are the only things you need to edit
 
 # Main sim directory with output and AHF_data folders
-MAIN_DIR='/oasis/tscc/scratch/cchoban/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/'
+MAIN_DIR='/scratch/06185/tg854841/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/'
 # Start and end snapshot numbers
 STARTNUM=001
 ENDNUM=10
@@ -24,8 +24,12 @@ AMIGA_DIR=$(MAIN_DIR)'AHF_data/AHF/run/'
 # Install and compile Amiga
 .PHONY: compile
 compile:
-	source module-reset.sh && cd AHF/compile && make
+	source ./module-reset.sh && cd AHF/compile && make
 
+# Clear Amiga program. Use this if there are issues with installation before trying again.
+.PHONY: clear
+clear:
+	rm -r ./AHF/compile/ahf-v1.0-100
 
 # Submit batch of jobs to scheduler
 .PHONY: submit
