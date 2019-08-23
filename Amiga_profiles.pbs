@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH -J amiga_halo_array
 #SBATCH -p skx-dev
-#SBATCH -t 02:00:00
+#SBATCH -t 00:10:00
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -A TG-AST120025
@@ -14,18 +14,25 @@ set -e
 pwd
 date
 source ./module-reset.sh
+cd ./AHF/run/
+pwd
 
-MAIN_DIR=$1
+echo $1
+echo $2
+echo $3
+echo $4
+
+export MAIN_DIR=$1
 export OMP_NUM_THREADS=$2
-STARTNUM=$3
-ENDNUM=$4
+export STARTNUM=$3
+export ENDNUM=$4
 
 
 # Directory of snapshots
-SNAP_DIR=$(MAIN_DIR)'output/'
+export SNAP_DIR="${MAIN_DIR}output/"
 # Directory to output AHF data
-OUTPUT_DIR=$(MAIN_DIR)'AHF_data/AHF_output/'
+export OUTPUT_DIR="${MAIN_DIR}AHF_data/AHF_output/"
 # Directory of the AMIGA exe file
-AMIGA_DIR=$(MAIN_DIR)'AHF_data/AHF/run/'
+export AMIGA_DIR="${MAIN_DIR}AHF_data/AHF/run/"
 
 python amigascript.py $SNAP_DIR $OUTPUT_DIR $AMIGA_DIR $STARTNUM $ENDNUM

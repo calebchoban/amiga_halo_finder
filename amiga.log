@@ -1,3 +1,23 @@
 /scratch/06185/tg854841/AHF_data
-Fri Aug 23 17:16:59 CDT 2019
-/tmp/slurmd/job4222936/slurm_script: line 16: ./activate.sh: No such file or directory
+Fri Aug 23 17:53:32 CDT 2019
+
+Currently Loaded Modules:
+  1) intel/18.0.2   2) mvapich2/2.3.1   3) hdf5/1.10.4
+
+ 
+
+/scratch/06185/tg854841/AHF_data/AHF/run
+/scratch/06185/tg854841/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/
+2
+001
+5
+Snapshot Directory: /scratch/06185/tg854841/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/output/
+Output Directory: /scratch/06185/tg854841/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/AHF_data/AHF_output/
+Amiga Directory: /scratch/06185/tg854841/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/AHF_data/AHF/run/
+First Snapshot: 1
+Final Snapshot: 5
+Directory /scratch/06185/tg854841/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/AHF_data/AHF_output/ already exists
+Traceback (most recent call last):
+  File "amigascript.py", line 33, in <module>
+    f=open(finname)
+IOError: [Errno 2] No such file or directory: '/scratch/06185/tg854841/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/AHF_data/AHF/run/AHF.input'
