@@ -4,10 +4,10 @@
 MAIN_DIR='/scratch/06185/tg854841/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/'
 # Start and end snapshot numbers
 STARTNUM=001
-ENDNUM=10
+ENDNUM=600
 # Number of snapshots each job will cover
-SNAPSTEP=5 # Make sure the range you give is divisible by the SNAPSTEP
-OMP_NUM_THREADS=2
+SNAPSTEP=30 # Make sure the range you give is divisible by the SNAPSTEP
+OMP_NUM_THREADS=16
 
 
 ###############################################################################
@@ -30,6 +30,13 @@ compile:
 .PHONY: clear
 clear:
 	rm -r ./AHF/compile/ahf-v1.0-100
+	rm ./AHF/compile/AHF
+	rm ./AHF/compile/MergerTree
+
+# Delete the AHF_output folder and all halo files!
+.PHONY: delete
+delete:
+	rm -r ./AHF_output/
 
 # Submit batch of jobs to scheduler
 .PHONY: submit

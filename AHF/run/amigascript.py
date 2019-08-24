@@ -70,7 +70,7 @@ while(count <= Nsnap):
         elif count<100:
                 strno='0'+str(count)
 	print 'doing ',strno
-	mycommand = amiga_dir+'AHF AHF.input'+strno
+	mycommand = 'ibrun '+amiga_dir+'AHF AHF.input'+strno
 	os.system(mycommand)
 	# Clean up files after we are done with them
 	mycommand = 'rm AHF.input'+strno

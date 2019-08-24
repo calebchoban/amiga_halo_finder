@@ -1,9 +1,9 @@
 #!/bin/sh
 #SBATCH -J amiga_halo_array
-#SBATCH -p skx-dev
-#SBATCH -t 00:10:00
+#SBATCH -p skx-normal
+#SBATCH -t 06:00:00
 #SBATCH -N 1
-#SBATCH -n 1
+#SBATCH -n 2
 #SBATCH -A TG-AST120025
 #SBATCH --mail-user=cchoban@ucsd.edu
 #SBATCH --mail-type=all
@@ -16,11 +16,6 @@ date
 source ./module-reset.sh
 cd ./AHF/run/
 pwd
-
-echo $1
-echo $2
-echo $3
-echo $4
 
 export MAIN_DIR=$1
 export OMP_NUM_THREADS=$2
