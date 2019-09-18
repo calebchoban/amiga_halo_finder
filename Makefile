@@ -21,6 +21,8 @@ OUTPUT_DIR=$(MAIN_DIR)'AHF_data/AHF_output/'
 AMIGA_DIR=$(MAIN_DIR)'AHF_data/AHF/run/'
 # Directory for MergerTree exe file
 MTREE_DIR=$(MAIN_DIR)'MergerTree/'
+# Directory for halo history output
+HALOS_DIR=$(MAIN_DIR)'halos/'
 
 
 # Install and compile Amiga
@@ -54,6 +56,11 @@ submit:
 # Run MergerTree for AHF output
 .PHONY: MergerTree
 MergerTree:
-	source ./module-reset.sh && cd MTREE_DIR && python MergerTreeScript.py
+	source ./module-reset.sh && cd MTREE_DIR && python MergerTreeScript.py $(OUTPUT_DIR)
+
+# Run ahfHaloHistory for AHF and MergerTree output
+.PHONY: ahfHaloHistory
+MergerTree:
+	source ./module-reset.sh && cd MTREE_DIR && python AHHScript.py $(OUTPUT_DIR) $(HALOS_DIR)
 
 

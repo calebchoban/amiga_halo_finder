@@ -27,7 +27,7 @@ number = str(len(filenames))
 particle_file_names = 'particle_file_names.txt'
 with open(particle_file_names, 'w') as f:
     for item in filenames:
-        f.write("%s\n" % item)
+        f.write("%s\n" % particle_dir+item)
 
 # Create output file names and write to txt file
 output_names = []
@@ -37,7 +37,7 @@ for item in filenames[:-1]:
 mtree_file_names = 'mtree_file_names.txt'
 with open(mtree_file_names, 'w') as f:
     for item in output_names:
-        f.write("%s\n" % item)
+        f.write("%s\n" % particle_dir+item)
 
 print "Running MergerTree"
 # Now run MergerTree for the given files
