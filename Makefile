@@ -19,6 +19,8 @@ SNAP_DIR=$(MAIN_DIR)'output/'
 OUTPUT_DIR=$(MAIN_DIR)'AHF_data/AHF_output/'
 # Directory of the AMIGA exe file
 AMIGA_DIR=$(MAIN_DIR)'AHF_data/AHF/run/'
+# Directory for MergerTree exe file
+MTREE_DIR=$(MAIN_DIR)'MergerTree/'
 
 
 # Install and compile Amiga
@@ -32,6 +34,7 @@ clear:
 	rm -r ./AHF/compile/ahf-v1.0-100
 	rm ./AHF/compile/AHF
 	rm ./AHF/compile/MergerTree
+	rm ./AHF/compile/ahfHaloHistory
 
 # Delete the AHF_output folder and all halo files!
 .PHONY: delete
@@ -48,15 +51,9 @@ submit:
 		((endnum = endnum + $(SNAPSTEP))) ; \
 	done
 
-# Read Amiga halos
-.PHONY: read
-read:
-	python AHF_halos_catalog_reader.py
-
-# Submit job to scheduler for all snapshots at once
-#.PHONY: submit
-#submit:
-#	qsub Amiga_profiles.pbs
-
+# Run MergerTree for AHF output
+.PHONY: MergerTree
+MergerTree:
+	source ./module-reset.sh && cd MTREE_DIR && python MergerTreeScript.py
 
 
