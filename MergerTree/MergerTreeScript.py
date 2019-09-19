@@ -27,7 +27,7 @@ number = str(len(filenames))
 particle_file_names = 'particle_file_names.txt'
 with open(particle_file_names, 'w') as f:
     for item in filenames:
-        f.write("%s\n" % particle_dir+item)
+        f.write("%s\n" % item)
 
 # Create output file names and write to txt file
 output_names = []
@@ -37,9 +37,24 @@ for item in filenames[:-1]:
 mtree_file_names = 'mtree_file_names.txt'
 with open(mtree_file_names, 'w') as f:
     for item in output_names:
-        f.write("%s\n" % particle_dir+item)
+        f.write("%s\n" % item)
 
 print "Running MergerTree"
-# Now run MergerTree for the given files
-my_command = 'MergerTree ' + number + particle_file_names + mtree_file_names
-os.system(my_command)
+# Now run MergerTree 
+process=subprocess.Popen(['./MergerTree'],
+                         stdin=subprocess.PIPE,
+                         stdout=subprocess.PIPE,
+                         stderr=subprocess.PIPE)
+
+# Now step through giving each file name to MergerTree (why is this the only what to run MergerTree?!)
+input_data=number+'\n'
+with open(particle_file_names, 'r') as f:
+    for item in f.readlines():
+        input_data += item + '\n'
+
+with open(mtree_file_names, 'r') as f:
+    for item in f.readlines():
+        input_data += item + '\n'
+
+stdoutdata,stderrdata=process.communicate(input=input_data)
+print stderrdata

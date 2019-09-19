@@ -1,33 +1,27 @@
 #!/bin/sh
-#SBATCH -J amiga_halo_array
+#SBATCH -J MergerTree
 #SBATCH -p skx-normal
-#SBATCH -t 08:00:00
+#SBATCH -t 00:30:00
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -A TG-AST120025
 #SBATCH --mail-user=cchoban@ucsd.edu
 #SBATCH --mail-type=all
-#SBATCH -o amiga.log
+#SBATCH -o MergerTree.log
 #SBATCH --export=ALL
 #SBATCH -D .
 set -e
 pwd
 date
 source ./module-reset.sh
-cd ./AHF/run/
+cd ./AHF/MergerTree/
 pwd
 
 export MAIN_DIR=$1
 export OMP_NUM_THREADS=$2
-export STARTNUM=$3
-export ENDNUM=$4
 
-
-# Directory of snapshots
-export SNAP_DIR="${MAIN_DIR}output/"
 # Directory to output AHF data
 export OUTPUT_DIR="${MAIN_DIR}AHF_data/AHF_output/"
-# Directory of the AMIGA exe file
-export AMIGA_DIR="${MAIN_DIR}AHF_data/AHF/run/"
 
-python amigascript.py $SNAP_DIR $OUTPUT_DIR $AMIGA_DIR $STARTNUM $ENDNUM
+
+python MergerTreeScript.py $OUTPUT_DIR
