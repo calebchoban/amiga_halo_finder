@@ -21,9 +21,7 @@ SNAP_DIR=$(MAIN_DIR)'output/'
 OUTPUT_DIR=$(MAIN_DIR)'AHF_data/AHF_output/'
 # Directory of the AMIGA exe file
 AMIGA_DIR=$(MAIN_DIR)'AHF_data/AHF/run/'
-# Directory for MergerTree exe file
-MTREE_DIR=$(MAIN_DIR)'AHF_data/MergerTree/'
-# Directory for halo history output
+# Directory for halo history and MergerTree
 HALOS_DIR=$(MAIN_DIR)'AHF_data/halos/'
 
 
@@ -45,9 +43,9 @@ clear:
 delete:
 	rm -r ./AHF_output/
 
-# Submit batch of jobs to scheduler
-.PHONY: submit
-submit:
+# Submit batch of AHF jobs
+.PHONY: AHF
+AHF:
 	beginnum=$(STARTNUM) ; endnum=$(SNAPSTEP) ; while [[ $$endnum -le $(ENDNUM) ]] ; do \
 		echo $$beginnum $$endnum ; \
 		sbatch Amiga_profiles.pbs $(MAIN_DIR) $(OMP_NUM_THREADS) $$beginnum $$endnum ; \
@@ -59,11 +57,12 @@ submit:
 .PHONY: MergerTree
 MergerTree:
 	sbatch MergerTree.pbs $(MAIN_DIR) $(OMP_NUM_THREADS)
-	#source ./module-reset.sh && cd $(MTREE_DIR) && python MergerTreeScript.py $(OUTPUT_DIR)
 
 # Run ahfHaloHistory for AHF and MergerTree output
 .PHONY: ahfHaloHistory
 ahfHaloHistory:
-	source ./module-reset.sh && cd $(MTREE_DIR) && python AHHScript.py $(OUTPUT_DIR) $(HALOS_DIR)
+	source ./module-reset.sh && cd $(HALOS_DIR) && python AHHScript.py
+    # Uncomment this and comment out the line above if you are running for many halos
+	#sbatch HaloHistory.pbs $(HALOS_DIR) $(OMP_NUM_THREADS)
 
 

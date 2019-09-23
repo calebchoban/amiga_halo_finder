@@ -1,27 +1,23 @@
 #!/bin/sh
-#SBATCH -J MergerTree
+#SBATCH -J Halo_History
 #SBATCH -p skx-normal
-#SBATCH -t 01:00:00
+#SBATCH -t 00:20:00
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -A TG-AST120025
 #SBATCH --mail-user=cchoban@ucsd.edu
 #SBATCH --mail-type=all
-#SBATCH -o MT.log
+#SBATCH -o HH.log
 #SBATCH --export=ALL
 #SBATCH -D .
 set -e
 pwd
 date
 source ./module-reset.sh
-cd ./halos/
+cd $1
 pwd
 
-export MAIN_DIR=$1
 export OMP_NUM_THREADS=$2
 
-# Directory to output AHF data
-export OUTPUT_DIR="${MAIN_DIR}AHF_data/AHF_output/"
 
-
-python MergerTreeScript.py $OUTPUT_DIR
+python AHHScript.py
