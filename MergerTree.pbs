@@ -1,20 +1,20 @@
 #!/bin/sh
 #SBATCH -J MergerTree
 #SBATCH -p skx-normal
-#SBATCH -t 00:30:00
+#SBATCH -t 01:00:00
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -A TG-AST120025
 #SBATCH --mail-user=cchoban@ucsd.edu
 #SBATCH --mail-type=all
-#SBATCH -o MergerTree.log
+#SBATCH -o MT.log
 #SBATCH --export=ALL
 #SBATCH -D .
 set -e
 pwd
 date
 source ./module-reset.sh
-cd ./AHF/MergerTree/
+cd ./MergerTree/
 pwd
 
 export MAIN_DIR=$1

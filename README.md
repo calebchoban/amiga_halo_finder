@@ -2,9 +2,9 @@
 
 This example compiles and runs Amiga Halo Finder and include scripts to read AHF outputs.
 
-You should set the main directory in the Makefile.
+First, uncomment MAIN_DIR line in MakeFile and set to your directory.
 
-First, compile AHF:
+Second, compile AHF:
 ```console
 make compile
 ```

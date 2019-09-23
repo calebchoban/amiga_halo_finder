@@ -1,7 +1,9 @@
 # These are the only things you need to edit
 
 # Main sim directory with output and AHF_data folders
-MAIN_DIR='/scratch/06185/tg854841/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/'
+# Uncomment this line and set to the MAIN_DIR of your simulation
+#MAIN_DIR='/scratch/06185/tg854841/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/'
+
 # Start and end snapshot numbers
 STARTNUM=001
 ENDNUM=600
