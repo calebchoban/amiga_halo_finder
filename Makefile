@@ -46,7 +46,7 @@ delete:
 # Submit batch of AHF jobs
 .PHONY: AHF
 AHF:
-	beginnum=$(STARTNUM) ; endnum=$(SNAPSTEP) ; while [[ $$endnum -le $(ENDNUM) ]] ; do \
+	beginnum=$(STARTNUM) ; ((endnum=$(STARTNUM)+$(SNAPSTEP)-1)) ; while [[ $$endnum -le $(ENDNUM) ]] ; do \
 		echo $$beginnum $$endnum ; \
 		sbatch Amiga_profiles.pbs $(MAIN_DIR) $(OMP_NUM_THREADS) $$beginnum $$endnum ; \
 		((beginnum = beginnum + $(SNAPSTEP))) ; \
