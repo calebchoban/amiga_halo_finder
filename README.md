@@ -19,6 +19,8 @@ Once the AHF jobs are done run MergerTree:
 make MergerTree
 ```
 
+Depending on what snapshots you ran AHF for, you will need to edit the redshift_list.txt file in the halos directory. By default the list starts at z=99 and ends at z=0. ahfHaloHistory uses this list when outputting the halo history file.
+
 Afterwards, run ahfHaloHistory:
 ```console
 make ahfHaloHistory
