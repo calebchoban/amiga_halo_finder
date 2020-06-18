@@ -12,21 +12,21 @@ else:
 	startno = 0
 	Nsnap = 600
 
-print "Snapshot Directory:", snap_dir
-print "Output Directory:", output_dir
-print "Amiga Directory:", amiga_dir
-print "First Snapshot:", startno
-print "Final Snapshot:", Nsnap
+print("Snapshot Directory:", snap_dir)
+print("Output Directory:", output_dir)
+print("Amiga Directory:", amiga_dir)
+print("First Snapshot:", startno)
+print("Final Snapshot:", Nsnap)
 
 
 
 # First create ouput directory if needed
 try:
-    # Create target Directory
-    os.mkdir(output_dir)
-    print "Directory " + output_dir +  " Created " 
+	# Create target Directory
+	os.mkdir(output_dir)
+	print("Directory ",output_dir," Created ")
 except:
-    print "Directory " + output_dir +  " already exists"
+	print("Directory ",output_dir," already exists")
 
 
 finname = amiga_dir+'AHF.input'
@@ -38,25 +38,25 @@ inputlist = []
 
 count = startno
 while(count <= Nsnap):
-        strno = str(count)
-        if count<10:
-                strno='00'+str(count)
-        elif count<100:
-                strno='0'+str(count)
-	print 'DOING N ',strno
+	strno = str(count)
+	if count<10:
+		strno='00'+str(count)
+	elif count<100:
+		strno='0'+str(count)
+	print('DOING N ',strno)
 	foutname = finname + strno
 	g = open(foutname, 'w')
 	linecount = 0
 	for line in dars:
 		linecount = linecount + 1
 		if (linecount == 2):
-			print 'ic_filename = '+snap_dir+'snapshot_'+strno+'.hdf5'
+			print('ic_filename = ',snap_dir,'snapshot_',strno,'.hdf5')
 			g.write('ic_filename = '+snap_dir+'snapshot_'+strno+'.hdf5'+'\n')
 		elif (linecount == 4):
-			print 'outfile_prefix = '+output_dir+'snapshot_'+strno
+			print('outfile_prefix = ',output_dir,'snapshot_',strno)
 			g.write('outfile_prefix = '+output_dir+'snapshot_'+strno+'\n')
 		else:
-			print line.strip()
+			print(line.strip())
 			g.write(line)
 	g.close()
 	count = count + 1
@@ -64,12 +64,12 @@ while(count <= Nsnap):
 
 count = startno
 while(count <= Nsnap):
-        strno = str(count)
-        if count<10:
-                strno='00'+str(count)
-        elif count<100:
-                strno='0'+str(count)
-	print 'doing ',strno
+	strno = str(count)
+	if count<10:
+		strno='00'+str(count)
+	elif count<100:
+		strno='0'+str(count)
+	print('doing ',strno)
 	mycommand = 'ibrun '+amiga_dir+'AHF AHF.input'+strno
 	os.system(mycommand)
 	# Clean up files after we are done with them
