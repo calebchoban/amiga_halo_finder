@@ -44,7 +44,8 @@ print("Running MergerTree")
 process=subprocess.Popen(['./MergerTree'],
 						stdin=subprocess.PIPE,
 						stdout=subprocess.PIPE,
-						stderr=subprocess.PIPE)
+						stderr=subprocess.PIPE,
+						encoding='utf8')
 
 # Now step through giving each file name to MergerTree (why is this the only what to run MergerTree?!)
 input_data=number+'\n'
