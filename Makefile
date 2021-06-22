@@ -24,11 +24,16 @@ AMIGA_DIR=$(MAIN_DIR)'AHF_data/AHF/run/'
 # Directory for halo history and MergerTree
 HALOS_DIR=$(MAIN_DIR)'AHF_data/halos/'
 
+# Download AHF
+.PHONY: download
+download:
+	cd AHF/compile && $(MAKE) download
 
-# Install and compile Amiga
+
+# Compile AHF
 .PHONY: compile
 compile:
-	source ./module-reset.sh && cd AHF/compile && make
+	source ./module-reset.sh && cd AHF/compile && $(MAKE) compile
 
 # Clear Amiga program. Use this if there are issues with installation before trying again.
 .PHONY: clear

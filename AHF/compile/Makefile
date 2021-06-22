@@ -5,10 +5,12 @@ MT_NAME = MergerTree
 AHH_NAME = ahfHaloHistory
 AHF_URL = http://popia.ft.uam.es/AHF/files/$(AHF_DIR).tgz
 
-.PHONY: all
-all: AHF
+.PHONY: download
+download: | $(AHF_DIR)
+	echo "$(AHF_DIR) downloaded"
 
-AHF: | $(AHF_DIR)
+.PHONY: compile
+compile: 
 	patch -N -p0 < v1.0-100.patch
 	mv $(AHF_DIR)/Makefile.config $(AHF_DIR)/Makefile.config.backup
 	cp Makefile.config $(AHF_DIR)/

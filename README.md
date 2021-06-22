@@ -4,7 +4,26 @@ This example compiles and runs Amiga Halo Finder and include scripts to read AHF
 
 First, uncomment MAIN_DIR line in MakeFile and set to your directory.
 
-Second, compile AHF:
+Second, download AHF:
+```console
+make download
+```
+
+If you are using FIRE-3 snapshots you ned to edit some AHF code before compiling. Go to AHF/compile/ahf-v1.0-100/src/libio/io_gizmo_header.c and change these two lines
+```console
+hdf5_attribute = H5Aopen_name(hdf5_headergrp, "Omega0");
+...
+hdf5_attribute = H5Aopen_name(hdf5_headergrp, "OmegaLambda");
+
+```
+To this
+```console
+hdf5_attribute = H5Aopen_name(hdf5_headergrp, "Omega_Matter");
+...
+hdf5_attribute = H5Aopen_name(hdf5_headergrp, "Omega_Lambda");
+```
+
+Third, compile AHF:
 ```console
 make compile
 ```
