@@ -1,15 +1,17 @@
 #!/bin/sh
-#SBATCH -J amiga_halo_array
-#SBATCH -p skx-normal
+#SBATCH -J AHF
+#SBATCH -p small
 #SBATCH -t 08:00:00
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH -A TG-AST120025
+#SBATCH -A AST20016
 #SBATCH --mail-user=cchoban@ucsd.edu
 #SBATCH --mail-type=all
 #SBATCH -o amiga.log
 #SBATCH --export=ALL
 #SBATCH -D .
+
+
 set -e
 pwd
 date
@@ -21,13 +23,13 @@ export MAIN_DIR=$1
 export OMP_NUM_THREADS=$2
 export STARTNUM=$3
 export ENDNUM=$4
+export MULTI_SNAP=$5
 
-
-# Directory of snapshots
+ Directory of snapshots
 export SNAP_DIR="${MAIN_DIR}output/"
 # Directory to output AHF data
 export OUTPUT_DIR="${MAIN_DIR}AHF_data/AHF_output/"
 # Directory of the AMIGA exe file
 export AMIGA_DIR="${MAIN_DIR}AHF_data/AHF/run/"
 
-python amigascript.py $SNAP_DIR $OUTPUT_DIR $AMIGA_DIR $STARTNUM $ENDNUM
+python amigascript.py $SNAP_DIR $OUTPUT_DIR $AMIGA_DIR $STARTNUM $ENDNUM $MULTI_SNAP

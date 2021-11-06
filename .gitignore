@@ -1,0 +1,11 @@
+AHF_output/
+
+MergerTree
+ahfHaloHistory
+
+
+amiga.log
+MT.log
+HH.log
+
+dev.sh

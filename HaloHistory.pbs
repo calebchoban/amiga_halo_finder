@@ -1,10 +1,10 @@
 #!/bin/sh
 #SBATCH -J Halo_History
-#SBATCH -p skx-normal
+#SBATCH -p development
 #SBATCH -t 00:20:00
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH -A TG-AST120025
+#SBATCH -A AST20016
 #SBATCH --mail-user=cchoban@ucsd.edu
 #SBATCH --mail-type=all
 #SBATCH -o HH.log

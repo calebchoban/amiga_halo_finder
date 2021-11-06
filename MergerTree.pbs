@@ -1,15 +1,16 @@
 #!/bin/sh
 #SBATCH -J MergerTree
-#SBATCH -p skx-normal
+#SBATCH -p development
 #SBATCH -t 01:00:00
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH -A TG-AST120025
+#SBATCH -A AST20016
 #SBATCH --mail-user=cchoban@ucsd.edu
 #SBATCH --mail-type=all
 #SBATCH -o MT.log
 #SBATCH --export=ALL
 #SBATCH -D .
+
 set -e
 pwd
 date

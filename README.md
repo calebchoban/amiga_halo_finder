@@ -2,14 +2,16 @@
 
 This example compiles and runs Amiga Halo Finder and include scripts to read AHF outputs.
 
-First, uncomment MAIN_DIR line in MakeFile and set to your directory.
+First, uncomment MAIN_DIR line in MakeFile and set to your directory. Then uncomment MULTI_SNAPS line and set to 1 if you simulation snapshots are broken up into multiple files or 0 otherwise.
+
+If needed, you can also edit the start and end snapshot numbers, the number snapshots each AHF job will deal with, and pick an OMP_NUM_THREADS number for your given number of cpu cores.
 
 Second, download AHF:
 ```console
 make download
 ```
 
-If you are using FIRE-3 snapshots you ned to edit some AHF code before compiling. Go to AHF/compile/ahf-v1.0-100/src/libio/io_gizmo_header.c and change these two lines
+If you are using FIRE-3 (or recent FIRE-2) snapshots you need to edit some AHF code before compiling. Go to AHF/compile/ahf-v1.0-100/src/libio/io_gizmo_header.c and change these two lines
 ```console
 hdf5_attribute = H5Aopen_name(hdf5_headergrp, "Omega0");
 ...

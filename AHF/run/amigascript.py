@@ -5,12 +5,16 @@ import os
 snap_dir = sys.argv[1]
 output_dir = sys.argv[2]
 amiga_dir = sys.argv[3]
-if len(sys.argv)>4:
+if len(sys.argv)>5:
 	startno = int(sys.argv[4])
 	Nsnap = int(sys.argv[5])
+	multi_snap = bool(sys.argv[6])
+elif len(sys.argv)>4:
+	multi_snap = bool(sys.argv[6])
 else:
 	startno = 0
 	Nsnap = 600
+	multi_snap = False
 
 print("Snapshot Directory:", snap_dir)
 print("Output Directory:", output_dir)
@@ -50,10 +54,21 @@ while(count <= Nsnap):
 	for line in dars:
 		linecount = linecount + 1
 		if (linecount == 2):
-			print('ic_filename = ',snap_dir,'snapshot_',strno,'.hdf5')
-			g.write('ic_filename = '+snap_dir+'snapshot_'+strno+'.hdf5'+'\n')
+			if not multi_snap:
+				print('ic_filename = '+snap_dir+'snapshot_'+strno+'.hdf5')
+				g.write('ic_filename = '+snap_dir+'snapshot_'+strno+'.hdf5'+'\n')
+			else:
+				print('ic_filename = '+snap_dir+'snapdir_'+strno+'/snapshot_'+strno+'.')
+				g.write('ic_filename = '+snap_dir+'snapdir_'+strno+'/snapshot_'+strno+'.'+'\n')
+		elif (linecount == 3):
+			if not multi_snap:
+				print('ic_filetype = 50')
+				g.write('ic_filetype = 50\n')
+			else:
+				print('ic_filetype = 51')
+				g.write('ic_filetype = 51\n')
 		elif (linecount == 4):
-			print('outfile_prefix = ',output_dir,'snapshot_',strno)
+			print('outfile_prefix = '+output_dir+'snapshot_'+strno)
 			g.write('outfile_prefix = '+output_dir+'snapshot_'+strno+'\n')
 		else:
 			print(line.strip())

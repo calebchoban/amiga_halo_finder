@@ -1,14 +1,15 @@
 # These are the only things you need to edit
 
 # Main sim directory with output and AHF_data folders
-# Uncomment this line and set to the MAIN_DIR of your simulation
-#MAIN_DIR='/scratch/06185/tg854841/FIRE_2_0_or_h553_criden1000_noaddm_sggs_dust/Elemental/'
+# Uncomment these lines and set to the MAIN_DIR of your simulation and no/yes (0/1) if the snapshots are split
+MAIN_DIR='/scratch1/06185/tg854841/cosmo/m12i_res7100_new_dust/'
+MULTI_SNAPS=1
 
 # Start and end snapshot numbers
 STARTNUM=001
-ENDNUM=600
+ENDNUM=160
 # Number of snapshots each job will cover
-SNAPSTEP=30 # Make sure the range you give is divisible by the SNAPSTEP
+SNAPSTEP=20 # Make sure the range you give is divisible by the SNAPSTEP
 OMP_NUM_THREADS=16
 
 
@@ -53,7 +54,7 @@ delete:
 AHF:
 	beginnum=$(STARTNUM) ; ((endnum=$(STARTNUM)+$(SNAPSTEP)-1)) ; while [[ $$endnum -le $(ENDNUM) ]] ; do \
 		echo $$beginnum $$endnum ; \
-		sbatch Amiga_profiles.pbs $(MAIN_DIR) $(OMP_NUM_THREADS) $$beginnum $$endnum ; \
+		sbatch AHF.sh $(MAIN_DIR) $(OMP_NUM_THREADS) $$beginnum $$endnum $$MULTI_SNAPS ; \
 		((beginnum = beginnum + $(SNAPSTEP))) ; \
 		((endnum = endnum + $(SNAPSTEP))) ; \
 	done
