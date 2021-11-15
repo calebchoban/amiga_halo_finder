@@ -25,11 +25,18 @@ export STARTNUM=$3
 export ENDNUM=$4
 export MULTI_SNAP=$5
 
- Directory of snapshots
+# Directory of snapshots
 export SNAP_DIR="${MAIN_DIR}output/"
 # Directory to output AHF data
 export OUTPUT_DIR="${MAIN_DIR}AHF_data/AHF_output/"
 # Directory of the AMIGA exe file
 export AMIGA_DIR="${MAIN_DIR}AHF_data/AHF/run/"
+
+echo $SNAP_DIR
+echo $OUTPUT_DIR
+echo $AMIGA_DIR
+echo $STARTNUM
+echo $ENDNUM
+echo $MULTI_SNAP
 
 python amigascript.py $SNAP_DIR $OUTPUT_DIR $AMIGA_DIR $STARTNUM $ENDNUM $MULTI_SNAP

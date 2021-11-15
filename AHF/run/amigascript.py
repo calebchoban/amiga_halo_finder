@@ -10,6 +10,8 @@ if len(sys.argv)>5:
 	Nsnap = int(sys.argv[5])
 	multi_snap = bool(sys.argv[6])
 elif len(sys.argv)>4:
+	starno = 0
+	NSnap = 600
 	multi_snap = bool(sys.argv[6])
 else:
 	startno = 0
