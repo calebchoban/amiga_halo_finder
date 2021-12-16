@@ -5,7 +5,13 @@ MergerTree
 ahfHaloHistory
 
 
-amiga.log
+redshift_list.txt
+prefix_file_names.txt
+particle_file_names.txt
+mtree_file_names.txt
+
+halo_*
+amiga.log*
 MT.log
 HH.log
 

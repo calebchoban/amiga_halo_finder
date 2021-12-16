@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH -J Halo_History
 #SBATCH -p development
-#SBATCH -t 00:20:00
+#SBATCH -t 01:00:00
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -A AST20016
@@ -20,4 +20,4 @@ pwd
 export OMP_NUM_THREADS=$2
 
 
-python AHHScript.py
+python AHHScript.py $3 $4 $5

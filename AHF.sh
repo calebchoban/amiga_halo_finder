@@ -1,13 +1,13 @@
 #!/bin/sh
 #SBATCH -J AHF
 #SBATCH -p small
-#SBATCH -t 08:00:00
+#SBATCH -t 48:00:00
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -A AST20016
-#SBATCH --mail-user=cchoban@ucsd.edu
+#SBATCH --mail-user=yiz020@ucsd.edu
 #SBATCH --mail-type=all
-#SBATCH -o amiga.log
+#SBATCH -o amiga.log%j
 #SBATCH --export=ALL
 #SBATCH -D .
 

@@ -19,7 +19,10 @@ print("Getting particles files and creating needed lists for MergerTree")
 # Get names of particle files
 for file in os.listdir(particle_dir):
 	if file.endswith(".AHF_particles"):
-		filenames += [os.path.join(particle_dir, file)]
+		# Now make sure MergerTree hasn't already been run for this snap
+		# If so we can skip it
+		if not os.path.exists(os.path.join(particle_dir,file[:-14]+".AHF_mtree")):
+			filenames += [os.path.join(particle_dir, file)]
 
 filenames.sort()
 number = str(len(filenames))

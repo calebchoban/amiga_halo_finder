@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH -J MergerTree
 #SBATCH -p development
-#SBATCH -t 01:00:00
+#SBATCH -t 02:00:00
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -A AST20016

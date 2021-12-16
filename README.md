@@ -39,8 +39,10 @@ Once the AHF jobs are done run MergerTree:
 ```console
 make MergerTree
 ```
+If this times out before finishing just keep running MergerTree. It will pick up wherever the last run left off at.
 
-Depending on what snapshots you ran AHF for, you will need to edit the redshift_list.txt file in the halos directory. By default the list starts at z=99 and ends at z=0. ahfHaloHistory uses this list when outputting the halo history file.
+
+Depending on what snapshots you ran AHF for, you will need to edit the HH_STARTNUM and HH_ENDNUM values in the Makefile. By default the list starts at snapshot 001 and ends at snapshot 600. If you want to run halo history for certain halos you can list the halos' numbers in the halo_ids.txt file. The default is halos 0-5.
 
 Afterwards, run ahfHaloHistory:
 ```console
@@ -51,6 +53,6 @@ The AHF and MergerTree output is located in AHF_output directory and the halo hi
 
 Note:
 - By default AHF is not compiled with MPI, if you want to use MPI add the -DWITH_MPI flag to the DEFINEFLAGS list in Makefile.config, but be warned that this will cause the halo ID's to be randomized and you will have to edit the halo_ids file after running AHF. Also all AHF files for each snapshot are broken up for each MPI task.
-- If you are running ahfHaloHistory for many halos, edit the Makefile so ahfHaloHistory submits a job instead of running the code on the login node.
+- If you are running ahfHaloHistory for many halos, edit the Makefile so ahfHaloHistory submits a job instead of running the code directly.
 
 
