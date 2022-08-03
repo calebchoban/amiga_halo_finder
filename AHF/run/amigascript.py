@@ -8,11 +8,11 @@ amiga_dir = sys.argv[3]
 if len(sys.argv)>5:
 	startno = int(sys.argv[4])
 	Nsnap = int(sys.argv[5])
-	multi_snap = bool(sys.argv[6])
+	multi_snap = bool(int(sys.argv[6]))
 elif len(sys.argv)>4:
 	starno = 0
 	NSnap = 600
-	multi_snap = bool(sys.argv[6])
+	multi_snap = bool(int(sys.argv[6]))
 else:
 	startno = 0
 	Nsnap = 600
@@ -23,7 +23,7 @@ print("Output Directory:", output_dir)
 print("Amiga Directory:", amiga_dir)
 print("First Snapshot:", startno)
 print("Final Snapshot:", Nsnap)
-
+print("Multisnapshots:", multi_snap)
 
 
 # First create ouput directory if needed

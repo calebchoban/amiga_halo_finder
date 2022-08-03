@@ -5,7 +5,7 @@
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -A AST20016
-#SBATCH --mail-user=cchoban@ucsd.edu
+#SBATCH --mail-user=EMAIL
 #SBATCH --mail-type=all
 #SBATCH -o MT.log
 #SBATCH --export=ALL

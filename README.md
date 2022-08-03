@@ -2,7 +2,7 @@
 
 This example compiles and runs Amiga Halo Finder and include scripts to read AHF outputs.
 
-First, uncomment MAIN_DIR line in MakeFile and set to your directory. Then uncomment MULTI_SNAPS line and set to 1 if you simulation snapshots are broken up into multiple files or 0 otherwise.
+First, uncomment MAIN_DIR line in MakeFile and set to your directory. Then uncomment MULTI_SNAPS line and set to 1 if you simulation snapshots are broken up into multiple files or 0 otherwise. Also edit all of the job scripts (AHF.sh, HaloHistory.sh, and MergerTree.sh) to use your email address.
 
 If needed, you can also edit the start and end snapshot numbers, the number snapshots each AHF job will deal with, and pick an OMP_NUM_THREADS number for your given number of cpu cores.
 
@@ -29,6 +29,7 @@ Third, compile AHF:
 ```console
 make compile
 ```
+
 
 Then, submit the AHF job script:
 ```console

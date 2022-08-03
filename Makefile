@@ -2,14 +2,14 @@
 
 # Main sim directory with output and AHF_data folders
 # Uncomment these lines and set to the MAIN_DIR of your simulation and no/yes (0/1) if the snapshots are split
-MAIN_DIR='/scratch1/06185/tg854841/m09_mass30_metal_diff/'
+#MAIN_DIR='/scratch1/06185/tg854841/m09_mass30_metal_diff/'
 MULTI_SNAPS=1
 
 # Start and end snapshot numbers
 STARTNUM=001
 ENDNUM=300
 # Number of snapshots each job will cover
-SNAPSTEP=6 # Make sure the range you give is divisible by the SNAPSTEP
+SNAPSTEP=10 # Make sure the range you give is divisible by the SNAPSTEP
 OMP_NUM_THREADS=14
 
 # Start and end snap numbers for halo history.
