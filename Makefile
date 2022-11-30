@@ -74,3 +74,21 @@ ahfHaloHistory:
     # Uncomment this and comment out the line above if you are running for many halos
 	#sbatch HaloHistory.sh $(HALOS_DIR) $(OMP_NUM_THREADS) $(OUTPUT_DIR) $(HH_STARTNUM) $(HH_ENDNUM)
 
+
+.PHONY: AHF_TSCC
+AHF_TSCC:
+	cd TSCC && qsub AHF.sh
+
+.PHONY: compile_TSCC
+compile_TSCC:
+	source ./TSCC/module-reset.sh && cd AHF/compile && $(MAKE) compile_TSCC
+
+# Run MergerTree for AHF output
+.PHONY: MergerTree_TSCC
+MergerTree_TSCC:
+	cd TSCC && qsub MergerTree.sh
+
+# Run ahfHaloHistory for AHF and MergerTree output
+.PHONY: ahfHaloHistory_TSCC
+ahfHaloHistory_TSCC:
+	source ./TSCC/module-reset.sh && cd $(HALOS_DIR) && python AHHScript.py $(OUTPUT_DIR) $(HH_STARTNUM) $(HH_ENDNUM)

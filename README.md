@@ -1,6 +1,6 @@
 # AHF Runner and Halo Reader
 
-This example compiles and runs Amiga Halo Finder and include scripts to read AHF outputs.
+This example compiles and runs Amiga Halo Finder and include scripts to read AHF outputs. If running on TSCC checks notes at bottom first!
 
 First, uncomment MAIN_DIR line in MakeFile and set to your directory. Then uncomment MULTI_SNAPS line and set to 1 if you simulation snapshots are broken up into multiple files or 0 otherwise. Also edit all of the job scripts (AHF.sh, HaloHistory.sh, and MergerTree.sh) to use your email address.
 
@@ -53,6 +53,7 @@ make ahfHaloHistory
 The AHF and MergerTree output is located in AHF_output directory and the halo history is in the halos directory.
 
 Note:
+- If running on TSCC run the TSCC version of each of the Makefile commands (i.e compile_TSCC, AHF_TSCC, MergerTree_TSCC, ahfHaloHistory_TSCC). You will also need to directly edit fields in the job submission scripts found in the TSCC/ directory.
 - By default AHF is not compiled with MPI, if you want to use MPI add the -DWITH_MPI flag to the DEFINEFLAGS list in Makefile.config, but be warned that this will cause the halo ID's to be randomized and you will have to edit the halo_ids file after running AHF. Also all AHF files for each snapshot are broken up for each MPI task.
 - If you are running ahfHaloHistory for many halos, edit the Makefile so ahfHaloHistory submits a job instead of running the code directly.
 

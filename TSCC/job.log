@@ -1,0 +1,874 @@
+/oasis/tscc/scratch/cchoban/AHF_data/TSCC
+Tue Nov 29 15:39:21 PST 2022
+Currently Loaded Modulefiles:
+  1) intel/2018.1.163   2) openmpi_ib/3.1.4   3) hdf5/1.10.3
+/oasis/tscc/scratch/cchoban/AHF_data/AHF/run
+/oasis/tscc/scratch/cchoban/gizmo_refactor_test/FIRE3_test/output/
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/
+/oasis/tscc/scratch/cchoban/AHF_data/AHF/run/
+599
+600
+0
+================================================================
+	             A        H       H   FFFFFFFF    
+	           A A       H       H   F           
+	         A   A      H       H   F           
+	       AAAAAAA     HHHHHHHHH   FFFFFF      
+	     A       A    H       H   F           
+	   A         A   H       H   F           
+	 A           A  H       H   F       (v1.0/100)
+================================================================
+
+================================================================
+	             A        H       H   FFFFFFFF    
+	           A A       H       H   F           
+	         A   A      H       H   F           
+	       AAAAAAA     HHHHHHHHH   FFFFFF      
+	     A       A    H       H   F           
+	   A         A   H       H   F           
+	 A           A  H       H   F       (v1.0/100)
+================================================================
+
+
+These are the input parameters you provided, please check them carefully again:
+
+These are the input parameters you provided, please check them carefully again:
+===============================================================================
+ic_filename       = /oasis/tscc/scratch/cchoban/gizmo_refactor_test/FIRE3_test/output/snapshot_599.hdf5
+ic_filetype       = 50
+outfile_prefix    = /oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_599
+===============================================================================
+ic_filename       = /oasis/tscc/scratch/cchoban/gizmo_refactor_test/FIRE3_test/output/snapshot_599.hdf5
+ic_filetype       = 50
+outfile_prefix    = /oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_599
+
+
+gen_domgrids: total number of domain grids = 1 (1, 0)
+
+
+
+gen_domgrids: total number of domain grids = 1 (1, 0)
+
+
+gen_refgrid:         current coarse grid         = 64
+                     placed new refinement       = 128
+
+gen_refgrid:         current coarse grid         = 64
+                     placed new refinement       = 128
+             grid    128:  nnodes=1921352 npart=12396441 => 0.154992 (<! 8)
+             grid    128:  nnodes=1921352 npart=12396441 => 0.154992 (<! 8)
+
+gen_refgrid:         current coarse grid         = 128
+
+gen_refgrid:         current coarse grid         = 128
+                     placed new refinement       = 256
+                     placed new refinement       = 256
+             grid    256:  nnodes=4261376 npart=11996157 => 0.355228 (<! 8)
+             grid    256:  nnodes=4261376 npart=11996157 => 0.355228 (<! 8)
+
+gen_refgrid:         current coarse grid         = 256
+
+gen_refgrid:         current coarse grid         = 256
+                     placed new refinement       = 512
+                     placed new refinement       = 512
+             grid    512:  nnodes=4903344 npart=11552957 => 0.424423 (<! 8)
+             grid    512:  nnodes=4903344 npart=11552957 => 0.424423 (<! 8)
+
+gen_refgrid:         current coarse grid         = 512
+
+gen_refgrid:         current coarse grid         = 512
+                     placed new refinement       = 1024
+                     placed new refinement       = 1024
+             grid   1024:  nnodes=4545536 npart=11070323 => 0.410606 (<! 8)
+             grid   1024:  nnodes=4545536 npart=11070323 => 0.410606 (<! 8)
+
+gen_refgrid:         current coarse grid         = 1024
+
+gen_refgrid:         current coarse grid         = 1024
+                     placed new refinement       = 2048
+                     placed new refinement       = 2048
+             grid   2048:  nnodes=3899120 npart=10336143 => 0.377232 (<! 8)
+             grid   2048:  nnodes=3899120 npart=10336143 => 0.377232 (<! 8)
+
+gen_refgrid:         current coarse grid         = 2048
+
+gen_refgrid:         current coarse grid         = 2048
+                     placed new refinement       = 4096
+                     placed new refinement       = 4096
+             grid   4096:  nnodes=3882904 npart=8889285 => 0.436807 (<! 8)
+             grid   4096:  nnodes=3882904 npart=8889285 => 0.436807 (<! 8)
+
+gen_refgrid:         current coarse grid         = 4096
+
+gen_refgrid:         current coarse grid         = 4096
+                     placed new refinement       = 8192
+                     placed new refinement       = 8192
+             grid   8192:  nnodes=5076056 npart=7017098 => 0.723384 (<! 8)
+             grid   8192:  nnodes=5076056 npart=7017098 => 0.723384 (<! 8)
+
+gen_refgrid:         current coarse grid         = 8192
+
+gen_refgrid:         current coarse grid         = 8192
+                     placed new refinement       = 16384
+                     placed new refinement       = 16384
+             grid  16384:  nnodes=6709760 npart=5045970 => 1.32973 (<! 8)
+             grid  16384:  nnodes=6709760 npart=5045970 => 1.32973 (<! 8)
+
+gen_refgrid:         current coarse grid         = 16384
+
+gen_refgrid:         current coarse grid         = 16384
+                     placed new refinement       = 32768
+                     placed new refinement       = 32768
+             grid  32768:  nnodes=5988336 npart=3821810 => 1.56688 (<! 8)
+             grid  32768:  nnodes=5988336 npart=3821810 => 1.56688 (<! 8)
+
+gen_refgrid:         current coarse grid         = 32768
+
+gen_refgrid:         current coarse grid         = 32768
+                     placed new refinement       = 65536
+                     placed new refinement       = 65536
+             grid  65536:  nnodes=5395928 npart=2921279 => 1.84711 (<! 8)
+             grid  65536:  nnodes=5395928 npart=2921279 => 1.84711 (<! 8)
+
+gen_refgrid:         current coarse grid         = 65536
+
+gen_refgrid:         current coarse grid         = 65536
+                     placed new refinement       = 131072
+                     placed new refinement       = 131072
+             grid 131072:  nnodes=4557416 npart=2010752 => 2.26652 (<! 8)
+             grid 131072:  nnodes=4557416 npart=2010752 => 2.26652 (<! 8)
+
+gen_refgrid:         current coarse grid         = 131072
+
+gen_refgrid:         current coarse grid         = 131072
+                     placed new refinement       = 262144
+                     placed new refinement       = 262144
+             grid 262144:  nnodes=3012248 npart=1131836 => 2.66138 (<! 8)
+             grid 262144:  nnodes=3012248 npart=1131836 => 2.66138 (<! 8)
+
+gen_refgrid:         current coarse grid         = 262144
+
+gen_refgrid:         current coarse grid         = 262144
+                     placed new refinement       = 524288
+                     placed new refinement       = 524288
+             grid 524288:  nnodes=1533392 npart=560673 => 2.73491 (<! 8)
+             grid 524288:  nnodes=1533392 npart=560673 => 2.73491 (<! 8)
+
+gen_refgrid:         current coarse grid         = 524288
+                     placed new refinement       = 1048576
+
+gen_refgrid:         current coarse grid         = 524288
+                     placed new refinement       = 1048576
+             grid 1048576:  nnodes=455472 npart=172688 => 2.63754 (<! 8)
+
+gen_refgrid:         current coarse grid         = 1048576
+             grid 1048576:  nnodes=455472 npart=172688 => 2.63754 (<! 8)
+                     placed new refinement       = 2097152
+             grid 2097152:  nnodes=6024 npart=551 => 10.9328 (<! 8)
+
+gen_refgrid:         current coarse grid         = 2097152
+                     NO new refinement grid !
+
+################## ahf_gridinfo ###################
+Number of grids           = 16
+Number of refinements     = 15
+global.domgrid_no         = 0
+l1dim =               64 refine_ovdens =          0.09689 ovlim =              200
+l1dim =              128 refine_ovdens =           0.7752 ovlim =              200
+l1dim =              256 refine_ovdens =            6.201 ovlim =              200
+l1dim =              512 refine_ovdens =            49.61 ovlim =              200
+l1dim =             1024 refine_ovdens =            396.9 ovlim =              200
+l1dim =             2048 refine_ovdens =             3175 ovlim =              200
+l1dim =             4096 refine_ovdens =         2.54e+04 ovlim =              200
+l1dim =             8192 refine_ovdens =        2.032e+05 ovlim =              200
+l1dim =            16384 refine_ovdens =        1.626e+06 ovlim =              200
+l1dim =            32768 refine_ovdens =        1.301e+07 ovlim =              200
+l1dim =            65536 refine_ovdens =         1.04e+08 ovlim =              200
+l1dim =           131072 refine_ovdens =        8.323e+08 ovlim =              200
+l1dim =           262144 refine_ovdens =        6.659e+09 ovlim =              200
+l1dim =           524288 refine_ovdens =        5.327e+10 ovlim =              200
+l1dim =          1048576 refine_ovdens =        4.261e+11 ovlim =              200
+l1dim =          2097152 refine_ovdens =        3.409e+12 ovlim =              200
+max_ovdens = 3.40919e+12
+min_ref = 3    (ahf_nogrids = 13)
+  initialising force.color on all grids...
+           0 || l1dim =          512
+
+gen_refgrid:         current coarse grid         = 1048576
+                     placed new refinement       = 2097152
+             grid 2097152:  nnodes=6024 npart=551 => 10.9328 (<! 8)
+
+gen_refgrid:         current coarse grid         = 2097152
+                     NO new refinement grid !
+
+################## ahf_gridinfo ###################
+Number of grids           = 16
+Number of refinements     = 15
+global.domgrid_no         = 0
+l1dim =               64 refine_ovdens =          0.09689 ovlim =              200
+l1dim =              128 refine_ovdens =           0.7752 ovlim =              200
+l1dim =              256 refine_ovdens =            6.201 ovlim =              200
+l1dim =              512 refine_ovdens =            49.61 ovlim =              200
+l1dim =             1024 refine_ovdens =            396.9 ovlim =              200
+l1dim =             2048 refine_ovdens =             3175 ovlim =              200
+l1dim =             4096 refine_ovdens =         2.54e+04 ovlim =              200
+l1dim =             8192 refine_ovdens =        2.032e+05 ovlim =              200
+l1dim =            16384 refine_ovdens =        1.626e+06 ovlim =              200
+l1dim =            32768 refine_ovdens =        1.301e+07 ovlim =              200
+l1dim =            65536 refine_ovdens =         1.04e+08 ovlim =              200
+l1dim =           131072 refine_ovdens =        8.323e+08 ovlim =              200
+l1dim =           262144 refine_ovdens =        6.659e+09 ovlim =              200
+l1dim =           524288 refine_ovdens =        5.327e+10 ovlim =              200
+l1dim =          1048576 refine_ovdens =        4.261e+11 ovlim =              200
+l1dim =          2097152 refine_ovdens =        3.409e+12 ovlim =              200
+max_ovdens = 3.40919e+12
+min_ref = 3    (ahf_nogrids = 13)
+  initialising force.color on all grids...
+           0 || l1dim =          512
+           1 || l1dim =         1024
+           1 || l1dim =         1024
+           2 || l1dim =         2048
+           2 || l1dim =         2048
+           3 || l1dim =         4096
+           3 || l1dim =         4096
+           4 || l1dim =         8192
+           4 || l1dim =         8192
+           5 || l1dim =        16384
+           5 || l1dim =        16384
+           6 || l1dim =        32768
+           6 || l1dim =        32768
+           7 || l1dim =        65536
+           7 || l1dim =        65536
+           8 || l1dim =       131072
+           8 || l1dim =       131072
+           9 || l1dim =       262144
+           9 || l1dim =       262144
+          10 || l1dim =       524288
+          10 || l1dim =       524288
+          11 || l1dim =      1048576
+          12 || l1dim =      2097152
+          11 || l1dim =      1048576
+          12 || l1dim =      2097152
+colCounter(110977)
+#################### ahf_halos ####################
+AHF_MINPART  = 20
+AHF_VTUNE    = 1.5
+z            = 0.000159239
+Omega(z)     = 0.310102
+OmegaL(z)    = 0.689898
+rho_crit(z)  = 2.77463e+11
+rho_back(z)  = 8.60417e+10
+rho_vir(z)   = 2.77463e+11 (actual normalisation density)
+Delta_vir(z) = 200
+Hubble(z)    = 100.007
+
+Collecting the isolated refinements ... colCounter(110977)
+#################### ahf_halos ####################
+AHF_MINPART  = 20
+AHF_VTUNE    = 1.5
+z            = 0.000159239
+Omega(z)     = 0.310102
+OmegaL(z)    = 0.689898
+rho_crit(z)  = 2.77463e+11
+rho_back(z)  = 8.60417e+10
+rho_vir(z)   = 2.77463e+11 (actual normalisation density)
+Delta_vir(z) = 200
+Hubble(z)    = 100.007
+
+Collecting the isolated refinements ... done
+
+Analysing the isolated refinements:
+done
+
+Analysing the isolated refinements:
+  0 || numSubStruct(        5505) numParDom(           0) numDaughter(        2611) newHalos(        2894)
+  1 || numSubStruct(        4207) numParDom(        5505) numDaughter(        3131) newHalos(        1076)
+  2 || numSubStruct(        2766) numParDom(        4207) numDaughter(        1931) newHalos(         835)
+  3 || numSubStruct(        2297) numParDom(        2766) numDaughter(         953) newHalos(        1344)
+  4 || numSubStruct(        4282) numParDom(        2297) numDaughter(        1214) newHalos(        3068)
+  5 || numSubStruct(        8049) numParDom(        4282) numDaughter(        2690) newHalos(        5359)
+  6 || numSubStruct(        7690) numParDom(        8049) numDaughter(        5251) newHalos(        2439)
+  7 || numSubStruct(        5941) numParDom(        7690) numDaughter(        4834) newHalos(        1107)
+  8 || numSubStruct(        3996) numParDom(        5941) numDaughter(        3429) newHalos(         567)
+  9 || numSubStruct(        2270) numParDom(        3996) numDaughter(        2131) newHalos(         139)
+ 10 || numSubStruct(         723) numParDom(        2270) numDaughter(         696) newHalos(          27)
+ 11 || numSubStruct(          25) numParDom(         723) numDaughter(          24) newHalos(           1)
+ 12 || numSubStruct(           0) numParDom(          25) numDaughter(           0) newHalos(           0)
+Number of Dark Matter Halos = 22925
+
+Converting the spatialRef[][] tree to a halos[] array:
+ spatialRef2halos():
+  number of isolated refinements  = 51820
+  first guess for number of halos = 22925
+  constructing 22925 (potential) halos from all 13 grid levels...
+      grid level        0 (         512) ->       4069 isolated refinements ... finished
+      grid level        1 (        1024) ->       5505 isolated refinements ... finished
+      grid level        2 (        2048) ->       4207 isolated refinements ... finished
+      grid level        3 (        4096) ->       2766 isolated refinements ... finished
+      grid level        4 (        8192) ->       2297 isolated refinements ... finished
+      grid level        5 (       16384) ->       4282 isolated refinements ... finished
+      grid level        6 (       32768) ->       8049 isolated refinements ... finished
+      grid level        7 (       65536) ->       7690 isolated refinements ... finished
+      grid level        8 (      131072) ->       5941 isolated refinements ... finished
+      grid level        9 (      262144) ->       3996 isolated refinements ... finished
+      grid level       10 (      524288) ->       2270 isolated refinements ... finished
+      grid level       11 (     1048576) ->        723 isolated refinements ... finished
+      grid level       12 (     2097152) ->         25 isolated refinements ... finished
+      number of halos: found=22925 (max=51820) expected=22925 (tmpCount=22925)
+      numDensZero = 480, numPartZero = 700
+  0 || numSubStruct(        5505) numParDom(           0) numDaughter(        2611) newHalos(        2894)
+  1 || numSubStruct(        4207) numParDom(        5505) numDaughter(        3131) newHalos(        1076)
+  2 || numSubStruct(        2766) numParDom(        4207) numDaughter(        1931) newHalos(         835)
+  3 || numSubStruct(        2297) numParDom(        2766) numDaughter(         953) newHalos(        1344)
+  4 || numSubStruct(        4282) numParDom(        2297) numDaughter(        1214) newHalos(        3068)
+  5 || numSubStruct(        8049) numParDom(        4282) numDaughter(        2690) newHalos(        5359)
+  6 || numSubStruct(        7690) numParDom(        8049) numDaughter(        5251) newHalos(        2439)
+  7 || numSubStruct(        5941) numParDom(        7690) numDaughter(        4834) newHalos(        1107)
+  8 || numSubStruct(        3996) numParDom(        5941) numDaughter(        3429) newHalos(         567)
+  9 || numSubStruct(        2270) numParDom(        3996) numDaughter(        2131) newHalos(         139)
+ 10 || numSubStruct(         723) numParDom(        2270) numDaughter(         696) newHalos(          27)
+ 11 || numSubStruct(          25) numParDom(         723) numDaughter(          24) newHalos(           1)
+ 12 || numSubStruct(           0) numParDom(          25) numDaughter(           0) newHalos(           0)
+Number of Dark Matter Halos = 22925
+
+Converting the spatialRef[][] tree to a halos[] array:
+ spatialRef2halos():
+  number of isolated refinements  = 51820
+  first guess for number of halos = 22925
+  constructing 22925 (potential) halos from all 13 grid levels...
+      grid level        0 (         512) ->       4069 isolated refinements ... finished
+      grid level        1 (        1024) ->       5505 isolated refinements ... finished
+      grid level        2 (        2048) ->       4207 isolated refinements ... finished
+      grid level        3 (        4096) ->       2766 isolated refinements ... finished
+      grid level        4 (        8192) ->       2297 isolated refinements ... finished
+      grid level        5 (       16384) ->       4282 isolated refinements ... finished
+      grid level        6 (       32768) ->       8049 isolated refinements ... finished
+      grid level        7 (       65536) ->       7690 isolated refinements ... finished
+      grid level        8 (      131072) ->       5941 isolated refinements ... finished
+      grid level        9 (      262144) ->       3996 isolated refinements ... finished
+      grid level       10 (      524288) ->       2270 isolated refinements ... finished
+      grid level       11 (     1048576) ->        723 isolated refinements ... finished
+      grid level       12 (     2097152) ->         25 isolated refinements ... finished
+      number of halos: found=22925 (max=51820) expected=22925 (tmpCount=22925)
+      numDensZero = 480, numPartZero = 700
+
+Free'ing all grid structures:
+  free'ing grid 2097152
+  free'ing grid 1048576
+  free'ing grid 524288
+  free'ing grid 262144
+  free'ing grid 131072
+  free'ing grid 65536
+  free'ing grid 32768
+  free'ing grid 16384
+  free'ing grid 8192
+  free'ing grid 4096
+  free'ing grid 2048
+
+Free'ing all grid structures:
+  free'ing grid 2097152
+  free'ing grid 1048576
+  free'ing grid 1024
+  free'ing grid 524288
+  free'ing grid 512
+  free'ing grid 262144
+  free'ing grid 256
+  free'ing grid 128
+  free'ing grid 131072
+  free'ing grid 64
+
+Constructing Halos (22925)
+===================================
+
+  free'ing grid 65536
+  free'ing grid 32768
+  free'ing grid 16384
+  free'ing grid 8192
+  free'ing grid 4096
+  free'ing grid 2048
+  free'ing grid 1024
+  free'ing grid 512
+  free'ing grid 256
+  free'ing grid 128
+  free'ing grid 64
+
+Constructing Halos (22925)
+===================================
+
+Re-hashing substructure information using final radii
+=====================================================
+
+Writing all AHF output files
+=============================
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_599.z0.000.AHF_halos
+Re-hashing substructure information using final radii
+=====================================================
+
+Writing all AHF output files
+=============================
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_599.z0.000.AHF_halos
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_599.z0.000.AHF_profiles
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_599.z0.000.AHF_profiles
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_599.z0.000.AHF_substructure
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_599.z0.000.AHF_substructure
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_599.z0.000.AHF_particles
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_599.z0.000.AHF_particles
+================================================================
+	             A        H       H   FFFFFFFF    
+	           A A       H       H   F           
+	         A   A      H       H   F           
+	       AAAAAAA     HHHHHHHHH   FFFFFF      
+	     A       A    H       H   F           
+	   A         A   H       H   F           
+	 A           A  H       H   F       (v1.0/100)
+================================================================
+
+
+These are the input parameters you provided, please check them carefully again:
+===============================================================================
+ic_filename       = /oasis/tscc/scratch/cchoban/gizmo_refactor_test/FIRE3_test/output/snapshot_600.hdf5
+ic_filetype       = 50
+outfile_prefix    = /oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_600
+================================================================
+	             A        H       H   FFFFFFFF    
+	           A A       H       H   F           
+	         A   A      H       H   F           
+	       AAAAAAA     HHHHHHHHH   FFFFFF      
+	     A       A    H       H   F           
+	   A         A   H       H   F           
+	 A           A  H       H   F       (v1.0/100)
+================================================================
+
+
+These are the input parameters you provided, please check them carefully again:
+===============================================================================
+ic_filename       = /oasis/tscc/scratch/cchoban/gizmo_refactor_test/FIRE3_test/output/snapshot_600.hdf5
+ic_filetype       = 50
+outfile_prefix    = /oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_600
+
+
+gen_domgrids: total number of domain grids = 1 (1, 0)
+
+
+
+gen_domgrids: total number of domain grids = 1 (1, 0)
+
+
+gen_refgrid:         current coarse grid         = 64
+                     placed new refinement       = 128
+
+gen_refgrid:         current coarse grid         = 64
+                     placed new refinement       = 128
+             grid    128:  nnodes=1921280 npart=12396427 => 0.154987 (<! 8)
+             grid    128:  nnodes=1921280 npart=12396427 => 0.154987 (<! 8)
+
+gen_refgrid:         current coarse grid         = 128
+
+gen_refgrid:         current coarse grid         = 128
+                     placed new refinement       = 256
+                     placed new refinement       = 256
+             grid    256:  nnodes=4262016 npart=11996240 => 0.355279 (<! 8)
+             grid    256:  nnodes=4262016 npart=11996240 => 0.355279 (<! 8)
+
+gen_refgrid:         current coarse grid         = 256
+
+gen_refgrid:         current coarse grid         = 256
+                     placed new refinement       = 512
+                     placed new refinement       = 512
+             grid    512:  nnodes=4902432 npart=11552978 => 0.424344 (<! 8)
+             grid    512:  nnodes=4902432 npart=11552978 => 0.424344 (<! 8)
+
+gen_refgrid:         current coarse grid         = 512
+
+gen_refgrid:         current coarse grid         = 512
+                     placed new refinement       = 1024
+                     placed new refinement       = 1024
+             grid   1024:  nnodes=4546344 npart=11070468 => 0.410673 (<! 8)
+             grid   1024:  nnodes=4546344 npart=11070468 => 0.410673 (<! 8)
+
+gen_refgrid:         current coarse grid         = 1024
+
+gen_refgrid:         current coarse grid         = 1024
+                     placed new refinement       = 2048
+                     placed new refinement       = 2048
+             grid   2048:  nnodes=3897720 npart=10335956 => 0.377103 (<! 8)
+             grid   2048:  nnodes=3897720 npart=10335956 => 0.377103 (<! 8)
+
+gen_refgrid:         current coarse grid         = 2048
+
+gen_refgrid:         current coarse grid         = 2048
+                     placed new refinement       = 4096
+                     placed new refinement       = 4096
+             grid   4096:  nnodes=3884056 npart=8889277 => 0.436937 (<! 8)
+             grid   4096:  nnodes=3884056 npart=8889277 => 0.436937 (<! 8)
+
+gen_refgrid:         current coarse grid         = 4096
+
+gen_refgrid:         current coarse grid         = 4096
+                     placed new refinement       = 8192
+                     placed new refinement       = 8192
+             grid   8192:  nnodes=5078104 npart=7017698 => 0.723614 (<! 8)
+             grid   8192:  nnodes=5078104 npart=7017698 => 0.723614 (<! 8)
+
+gen_refgrid:         current coarse grid         = 8192
+
+gen_refgrid:         current coarse grid         = 8192
+                     placed new refinement       = 16384
+                     placed new refinement       = 16384
+             grid  16384:  nnodes=6715360 npart=5047266 => 1.33049 (<! 8)
+             grid  16384:  nnodes=6715360 npart=5047266 => 1.33049 (<! 8)
+
+gen_refgrid:         current coarse grid         = 16384
+
+gen_refgrid:         current coarse grid         = 16384
+                     placed new refinement       = 32768
+                     placed new refinement       = 32768
+             grid  32768:  nnodes=5989200 npart=3822782 => 1.56671 (<! 8)
+             grid  32768:  nnodes=5989200 npart=3822782 => 1.56671 (<! 8)
+
+gen_refgrid:         current coarse grid         = 32768
+
+gen_refgrid:         current coarse grid         = 32768
+                     placed new refinement       = 65536
+                     placed new refinement       = 65536
+             grid  65536:  nnodes=5385088 npart=2920584 => 1.84384 (<! 8)
+             grid  65536:  nnodes=5385088 npart=2920584 => 1.84384 (<! 8)
+
+gen_refgrid:         current coarse grid         = 65536
+
+gen_refgrid:         current coarse grid         = 65536
+                     placed new refinement       = 131072
+                     placed new refinement       = 131072
+             grid 131072:  nnodes=4548832 npart=2011098 => 2.26186 (<! 8)
+             grid 131072:  nnodes=4548832 npart=2011098 => 2.26186 (<! 8)
+
+gen_refgrid:         current coarse grid         = 131072
+
+gen_refgrid:         current coarse grid         = 131072
+                     placed new refinement       = 262144
+                     placed new refinement       = 262144
+             grid 262144:  nnodes=2994816 npart=1130178 => 2.64986 (<! 8)
+             grid 262144:  nnodes=2994816 npart=1130178 => 2.64986 (<! 8)
+
+gen_refgrid:         current coarse grid         = 262144
+
+gen_refgrid:         current coarse grid         = 262144
+                     placed new refinement       = 524288
+                     placed new refinement       = 524288
+             grid 524288:  nnodes=1543464 npart=561885 => 2.74694 (<! 8)
+             grid 524288:  nnodes=1543464 npart=561885 => 2.74694 (<! 8)
+
+gen_refgrid:         current coarse grid         = 524288
+                     placed new refinement       = 1048576
+
+gen_refgrid:         current coarse grid         = 524288
+             grid 1048576:  nnodes=453120 npart=172086 => 2.6331 (<! 8)
+                     placed new refinement       = 1048576
+
+gen_refgrid:         current coarse grid         = 1048576
+             grid 1048576:  nnodes=453120 npart=172086 => 2.6331 (<! 8)
+                     placed new refinement       = 2097152
+             grid 2097152:  nnodes=4848 npart=350 => 13.8514 (<! 8)
+
+gen_refgrid:         current coarse grid         = 2097152
+                     NO new refinement grid !
+
+################## ahf_gridinfo ###################
+Number of grids           = 16
+Number of refinements     = 15
+global.domgrid_no         = 0
+l1dim =               64 refine_ovdens =          0.09686 ovlim =              200
+l1dim =              128 refine_ovdens =           0.7749 ovlim =              200
+l1dim =              256 refine_ovdens =            6.199 ovlim =              200
+l1dim =              512 refine_ovdens =            49.59 ovlim =              200
+l1dim =             1024 refine_ovdens =            396.8 ovlim =              200
+l1dim =             2048 refine_ovdens =             3174 ovlim =              200
+l1dim =             4096 refine_ovdens =        2.539e+04 ovlim =              200
+l1dim =             8192 refine_ovdens =        2.031e+05 ovlim =              200
+l1dim =            16384 refine_ovdens =        1.625e+06 ovlim =              200
+l1dim =            32768 refine_ovdens =          1.3e+07 ovlim =              200
+l1dim =            65536 refine_ovdens =         1.04e+08 ovlim =              200
+l1dim =           131072 refine_ovdens =         8.32e+08 ovlim =              200
+l1dim =           262144 refine_ovdens =        6.656e+09 ovlim =              200
+l1dim =           524288 refine_ovdens =        5.325e+10 ovlim =              200
+l1dim =          1048576 refine_ovdens =         4.26e+11 ovlim =              200
+l1dim =          2097152 refine_ovdens =        3.408e+12 ovlim =              200
+max_ovdens = 3.40807e+12
+min_ref = 3    (ahf_nogrids = 13)
+  initialising force.color on all grids...
+           0 || l1dim =          512
+
+gen_refgrid:         current coarse grid         = 1048576
+                     placed new refinement       = 2097152
+             grid 2097152:  nnodes=4848 npart=350 => 13.8514 (<! 8)
+
+gen_refgrid:         current coarse grid         = 2097152
+                     NO new refinement grid !
+
+################## ahf_gridinfo ###################
+Number of grids           = 16
+Number of refinements     = 15
+global.domgrid_no         = 0
+l1dim =               64 refine_ovdens =          0.09686 ovlim =              200
+l1dim =              128 refine_ovdens =           0.7749 ovlim =              200
+l1dim =              256 refine_ovdens =            6.199 ovlim =              200
+l1dim =              512 refine_ovdens =            49.59 ovlim =              200
+l1dim =             1024 refine_ovdens =            396.8 ovlim =              200
+l1dim =             2048 refine_ovdens =             3174 ovlim =              200
+l1dim =             4096 refine_ovdens =        2.539e+04 ovlim =              200
+l1dim =             8192 refine_ovdens =        2.031e+05 ovlim =              200
+l1dim =            16384 refine_ovdens =        1.625e+06 ovlim =              200
+l1dim =            32768 refine_ovdens =          1.3e+07 ovlim =              200
+l1dim =            65536 refine_ovdens =         1.04e+08 ovlim =              200
+l1dim =           131072 refine_ovdens =         8.32e+08 ovlim =              200
+l1dim =           262144 refine_ovdens =        6.656e+09 ovlim =              200
+l1dim =           524288 refine_ovdens =        5.325e+10 ovlim =              200
+l1dim =          1048576 refine_ovdens =         4.26e+11 ovlim =              200
+l1dim =          2097152 refine_ovdens =        3.408e+12 ovlim =              200
+max_ovdens = 3.40807e+12
+min_ref = 3    (ahf_nogrids = 13)
+  initialising force.color on all grids...
+           0 || l1dim =          512
+           1 || l1dim =         1024
+           1 || l1dim =         1024
+           2 || l1dim =         2048
+           2 || l1dim =         2048
+           3 || l1dim =         4096
+           3 || l1dim =         4096
+           4 || l1dim =         8192
+           4 || l1dim =         8192
+           5 || l1dim =        16384
+           5 || l1dim =        16384
+           6 || l1dim =        32768
+           6 || l1dim =        32768
+           7 || l1dim =        65536
+           7 || l1dim =        65536
+           8 || l1dim =       131072
+           8 || l1dim =       131072
+           9 || l1dim =       262144
+           9 || l1dim =       262144
+          10 || l1dim =       524288
+          10 || l1dim =       524288
+          11 || l1dim =      1048576
+          11 || l1dim =      1048576
+          12 || l1dim =      2097152
+          12 || l1dim =      2097152
+colCounter(110747)
+#################### ahf_halos ####################
+AHF_MINPART  = 20
+AHF_VTUNE    = 1.5
+z            = 0
+Omega(z)     = 0.31
+OmegaL(z)    = 0.69
+rho_crit(z)  = 2.77554e+11
+rho_back(z)  = 8.60417e+10
+rho_vir(z)   = 2.77554e+11 (actual normalisation density)
+Delta_vir(z) = 200
+Hubble(z)    = 100
+
+Collecting the isolated refinements ... colCounter(110747)
+#################### ahf_halos ####################
+AHF_MINPART  = 20
+AHF_VTUNE    = 1.5
+z            = 0
+Omega(z)     = 0.31
+OmegaL(z)    = 0.69
+rho_crit(z)  = 2.77554e+11
+rho_back(z)  = 8.60417e+10
+rho_vir(z)   = 2.77554e+11 (actual normalisation density)
+Delta_vir(z) = 200
+Hubble(z)    = 100
+
+Collecting the isolated refinements ... done
+
+Analysing the isolated refinements:
+done
+
+Analysing the isolated refinements:
+  0 || numSubStruct(        5509) numParDom(           0) numDaughter(        2613) newHalos(        2896)
+  1 || numSubStruct(        4208) numParDom(        5509) numDaughter(        3130) newHalos(        1078)
+  2 || numSubStruct(        2765) numParDom(        4208) numDaughter(        1929) newHalos(         836)
+  3 || numSubStruct(        2308) numParDom(        2765) numDaughter(         961) newHalos(        1347)
+  4 || numSubStruct(        4260) numParDom(        2308) numDaughter(        1209) newHalos(        3051)
+  5 || numSubStruct(        8074) numParDom(        4260) numDaughter(        2683) newHalos(        5391)
+  6 || numSubStruct(        7673) numParDom(        8074) numDaughter(        5231) newHalos(        2442)
+  7 || numSubStruct(        5900) numParDom(        7673) numDaughter(        4784) newHalos(        1116)
+  8 || numSubStruct(        3907) numParDom(        5900) numDaughter(        3360) newHalos(         547)
+  9 || numSubStruct(        2259) numParDom(        3907) numDaughter(        2123) newHalos(         136)
+ 10 || numSubStruct(         697) numParDom(        2259) numDaughter(         670) newHalos(          27)
+ 11 || numSubStruct(          23) numParDom(         697) numDaughter(          23) newHalos(           0)
+ 12 || numSubStruct(           0) numParDom(          23) numDaughter(           0) newHalos(           0)
+Number of Dark Matter Halos = 22932
+
+Converting the spatialRef[][] tree to a halos[] array:
+ spatialRef2halos():
+  number of isolated refinements  = 51648
+  first guess for number of halos = 22932
+  constructing 22932 (potential) halos from all 13 grid levels...
+      grid level        0 (         512) ->       4065 isolated refinements ... finished
+      grid level        1 (        1024) ->       5509 isolated refinements ... finished
+      grid level        2 (        2048) ->       4208 isolated refinements ... finished
+      grid level        3 (        4096) ->       2765 isolated refinements ... finished
+      grid level        4 (        8192) ->       2308 isolated refinements ... finished
+      grid level        5 (       16384) ->       4260 isolated refinements ... finished
+      grid level        6 (       32768) ->       8074 isolated refinements ... finished
+      grid level        7 (       65536) ->       7673 isolated refinements ... finished
+      grid level        8 (      131072) ->       5900 isolated refinements ... finished
+      grid level        9 (      262144) ->       3907 isolated refinements ... finished
+      grid level       10 (      524288) ->       2259 isolated refinements ... finished
+      grid level       11 (     1048576) ->        697 isolated refinements ... finished
+      grid level       12 (     2097152) ->         23 isolated refinements ... finished
+      number of halos: found=22932 (max=51648) expected=22932 (tmpCount=22932)
+      numDensZero = 446, numPartZero = 665
+  0 || numSubStruct(        5509) numParDom(           0) numDaughter(        2613) newHalos(        2896)
+  1 || numSubStruct(        4208) numParDom(        5509) numDaughter(        3130) newHalos(        1078)
+  2 || numSubStruct(        2765) numParDom(        4208) numDaughter(        1929) newHalos(         836)
+  3 || numSubStruct(        2308) numParDom(        2765) numDaughter(         961) newHalos(        1347)
+  4 || numSubStruct(        4260) numParDom(        2308) numDaughter(        1209) newHalos(        3051)
+  5 || numSubStruct(        8074) numParDom(        4260) numDaughter(        2683) newHalos(        5391)
+  6 || numSubStruct(        7673) numParDom(        8074) numDaughter(        5231) newHalos(        2442)
+  7 || numSubStruct(        5900) numParDom(        7673) numDaughter(        4784) newHalos(        1116)
+  8 || numSubStruct(        3907) numParDom(        5900) numDaughter(        3360) newHalos(         547)
+  9 || numSubStruct(        2259) numParDom(        3907) numDaughter(        2123) newHalos(         136)
+ 10 || numSubStruct(         697) numParDom(        2259) numDaughter(         670) newHalos(          27)
+ 11 || numSubStruct(          23) numParDom(         697) numDaughter(          23) newHalos(           0)
+ 12 || numSubStruct(           0) numParDom(          23) numDaughter(           0) newHalos(           0)
+Number of Dark Matter Halos = 22932
+
+Converting the spatialRef[][] tree to a halos[] array:
+ spatialRef2halos():
+  number of isolated refinements  = 51648
+  first guess for number of halos = 22932
+  constructing 22932 (potential) halos from all 13 grid levels...
+      grid level        0 (         512) ->       4065 isolated refinements ... finished
+      grid level        1 (        1024) ->       5509 isolated refinements ... finished
+      grid level        2 (        2048) ->       4208 isolated refinements ... finished
+      grid level        3 (        4096) ->       2765 isolated refinements ... finished
+      grid level        4 (        8192) ->       2308 isolated refinements ... finished
+      grid level        5 (       16384) ->       4260 isolated refinements ... finished
+      grid level        6 (       32768) ->       8074 isolated refinements ... finished
+      grid level        7 (       65536) ->       7673 isolated refinements ... finished
+      grid level        8 (      131072) ->       5900 isolated refinements ... finished
+      grid level        9 (      262144) ->       3907 isolated refinements ... finished
+      grid level       10 (      524288) ->       2259 isolated refinements ... finished
+      grid level       11 (     1048576) ->        697 isolated refinements ... finished
+      grid level       12 (     2097152) ->         23 isolated refinements ... finished
+      number of halos: found=22932 (max=51648) expected=22932 (tmpCount=22932)
+      numDensZero = 446, numPartZero = 665
+
+Free'ing all grid structures:
+  free'ing grid 2097152
+  free'ing grid 1048576
+  free'ing grid 524288
+  free'ing grid 262144
+  free'ing grid 131072
+  free'ing grid 65536
+
+Free'ing all grid structures:
+  free'ing grid 2097152
+  free'ing grid 1048576
+  free'ing grid 524288
+  free'ing grid 32768
+  free'ing grid 262144
+  free'ing grid 16384
+  free'ing grid 131072
+  free'ing grid 8192
+  free'ing grid 65536
+  free'ing grid 4096
+  free'ing grid 2048
+  free'ing grid 1024
+  free'ing grid 32768
+  free'ing grid 512
+  free'ing grid 16384
+  free'ing grid 256
+  free'ing grid 128
+  free'ing grid 8192
+  free'ing grid 64
+
+Constructing Halos (22932)
+===================================
+
+  free'ing grid 4096
+  free'ing grid 2048
+  free'ing grid 1024
+  free'ing grid 512
+  free'ing grid 256
+  free'ing grid 128
+  free'ing grid 64
+
+Constructing Halos (22932)
+===================================
+
+Re-hashing substructure information using final radii
+=====================================================
+
+Writing all AHF output files
+=============================
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_600.z0.000.AHF_halos
+Re-hashing substructure information using final radii
+=====================================================
+
+Writing all AHF output files
+=============================
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_600.z0.000.AHF_halos
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_600.z0.000.AHF_profiles
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_600.z0.000.AHF_profiles
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_600.z0.000.AHF_substructure
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_600.z0.000.AHF_particles
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_600.z0.000.AHF_substructure
+/oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_600.z0.000.AHF_particles
+Snapshot Directory: /oasis/tscc/scratch/cchoban/gizmo_refactor_test/FIRE3_test/output/
+Output Directory: /oasis/tscc/scratch/cchoban/AHF_data/AHF_output/
+Amiga Directory: /oasis/tscc/scratch/cchoban/AHF_data/AHF/run/
+Cores per Thread: 2
+First Snapshot: 599
+Final Snapshot: 600
+Multisnapshots: False
+Directory  /oasis/tscc/scratch/cchoban/AHF_data/AHF_output/  already exists
+DOING N  599
+[AHF]
+ic_filename = /oasis/tscc/scratch/cchoban/gizmo_refactor_test/FIRE3_test/output/snapshot_599.hdf5
+ic_filetype = 50
+outfile_prefix = /oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_599
+
+LgridDomain       = 64
+LgridMax          = 16777216
+NperDomCell       = 2.0
+NperRefCell       = 2.5
+VescTune          = 1.5
+NminPerHalo       = 20
+RhoVir            = 0
+Dvir              = 200
+MaxGatherRad      = 3.0
+LevelDomainDecomp = 6
+NcpuReading       = 1
+
+[GIZMO]
+GIZMO_LUNIT = 1e-3
+GIZMO_MUNIT = 1e10
+DOING N  600
+[AHF]
+ic_filename = /oasis/tscc/scratch/cchoban/gizmo_refactor_test/FIRE3_test/output/snapshot_600.hdf5
+ic_filetype = 50
+outfile_prefix = /oasis/tscc/scratch/cchoban/AHF_data/AHF_output/snapshot_600
+
+LgridDomain       = 64
+LgridMax          = 16777216
+NperDomCell       = 2.0
+NperRefCell       = 2.5
+VescTune          = 1.5
+NminPerHalo       = 20
+RhoVir            = 0
+Dvir              = 200
+MaxGatherRad      = 3.0
+LevelDomainDecomp = 6
+NcpuReading       = 1
+
+[GIZMO]
+GIZMO_LUNIT = 1e-3
+GIZMO_MUNIT = 1e10
+doing  599
+mpirun -N 2 /oasis/tscc/scratch/cchoban/AHF_data/AHF/run/AHF AHF.input599
+doing  600
+mpirun -N 2 /oasis/tscc/scratch/cchoban/AHF_data/AHF/run/AHF AHF.input600
+Nodes:        tscc-4-10
