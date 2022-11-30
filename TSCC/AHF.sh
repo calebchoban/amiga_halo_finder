@@ -15,19 +15,20 @@ cd ../AHF/run/
 pwd
 
 # Set this to the AHF_data directory
-export MAIN_DIR=""
+export MAIN_DIR="/oasis/tscc/scratch/cchoban/"
 # Number of OMP Threads
 export OMP_NUM_THREADS=4
 # Number of cores per thread. Should be ppn/OMP_threads. 2 cores per thread is probably good
 export CORES_PER_THREAD=2
 # Start and end snapshot numbers
-export STARTNUM=1
+export STARTNUM=598
 export ENDNUM=600
 # Enter 0/1 for if snapshots are divided into subsnaps
 export MULTI_SNAP=0
 
 # Directory of snapshots
-export SNAP_DIR="${MAIN_DIR}output/"
+#export SNAP_DIR="${MAIN_DIR}output/"
+export SNAP_DIR="/oasis/tscc/scratch/cchoban/gizmo_refactor_test/FIRE3_test/output/"
 # Directory to output AHF data
 export OUTPUT_DIR="${MAIN_DIR}AHF_data/AHF_output/"
 # Directory of the AMIGA exe file

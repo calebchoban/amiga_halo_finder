@@ -1,5 +1,6 @@
 import sys
 import os
+import re
 
 
 snap_dir = sys.argv[1]
@@ -27,12 +28,18 @@ print("Multisnapshots:", multi_snap)
 
 
 # First create ouput directory if needed
-try:
-	# Create target Directory
-	os.mkdir(output_dir)
-	print("Directory ",output_dir," Created ")
-except:
-	print("Directory ",output_dir," already exists")
+if not os.path.isdir(output_dir):
+    os.mkdir(output_dir)
+    print("Directory " + output_dir +  " Created ")
+
+
+# If AHF has already run on some snaps figure out which ones they are so we can skip them
+skip_snaps = []
+for file in os.listdir(output_dir):
+    if file.endswith(".AHF_profiles"):
+        regex = re.compile(r'\d+')
+        num = int(regex.findall(file)[0])
+        skip_snaps += [num]
 
 
 finname = amiga_dir+'AHF.input'
@@ -81,15 +88,23 @@ while(count <= Nsnap):
 
 count = startno
 while(count <= Nsnap):
-	strno = str(count)
-	if count<10:
-		strno='00'+str(count)
-	elif count<100:
-		strno='0'+str(count)
-	print('doing ',strno)
-	mycommand = 'ibrun '+amiga_dir+'AHF AHF.input'+strno
-	os.system(mycommand)
-	# Clean up files after we are done with them
-	mycommand = 'rm AHF.input'+strno
-	os.system(mycommand)
-	count = count +1
+    if count in skip_snaps:
+        print("Skipping ", count)
+        mycommand = 'rm AHF.input'+strno
+        os.system(mycommand)
+        count += 1
+        continue
+
+    strno = str(count)
+    if count<10:
+        strno='00'+str(count)
+    elif count<100:
+        strno='0'+str(count)
+    print('Doing ',strno)
+    mycommand = 'mpirun -N '+cores_per_thread+' '+amiga_dir+'AHF AHF.input'+strno
+    print(mycommand)
+    os.system(mycommand)
+    # Clean up files after we are done with them
+    mycommand = 'rm AHF.input'+strno
+    os.system(mycommand)
+    count = count +1

@@ -11,6 +11,7 @@ particle_file_names.txt
 mtree_file_names.txt
 
 halo_*
+*.log
 amiga.log*
 MT.log
 HH.log
