@@ -45,10 +45,14 @@ If this times out before finishing just keep running MergerTree. It will pick up
 
 Depending on what snapshots you ran AHF for, you will need to edit the HH_STARTNUM and HH_ENDNUM values in the Makefile. By default the list starts at snapshot 001 and ends at snapshot 600. If you want to run halo history for certain halos you can list the halos' numbers in the halo_ids.txt file. The default is halos 0-5.
 
-Afterwards, run ahfHaloHistory:
+Afterwards, make a copy of either FIRE2_ref_redshift_list.txt or FIRE3_ref_redshift_list.txt to ref_redshift_list.txt in the halos directory, depending on if this is a FIRE-2 or FIRE-3 simulation.
+
+Then you can run ahfHaloHistory:
 ```console
 make ahfHaloHistory
 ```
+
+Depending on what first snapshot you start, you may need to make halo historys for many halos to find the main halo at z=0. You can use the find_final_halo.py script to find which halo_XXXXXXX.dat file has the main halo at z=0.
 
 The AHF and MergerTree output is located in AHF_output directory and the halo history is in the halos directory.
 

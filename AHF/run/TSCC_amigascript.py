@@ -91,7 +91,7 @@ count = startno
 while(count <= Nsnap):
     if count in skip_snaps:
         print("Skipping ", count)
-        mycommand = 'rm AHF.input'+strno
+        mycommand = 'rm AHF.input'+str(count)
         os.system(mycommand)
         count += 1
         continue

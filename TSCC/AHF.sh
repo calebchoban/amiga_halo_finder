@@ -2,7 +2,7 @@
 #PBS -N AHF
 #PBS -q condo
 #PBS -l nodes=1:ppn=8
-#PBS -l walltime=04:00:00
+#PBS -l walltime=08:00:00
 #PBS -j oe
 #PBS -o AHF.log
 #PBS -d .
@@ -15,20 +15,19 @@ cd ../AHF/run/
 pwd
 
 # Set this to the AHF_data directory
-export MAIN_DIR="/oasis/tscc/scratch/cchoban/"
+export MAIN_DIR=""
 # Number of OMP Threads
 export OMP_NUM_THREADS=4
 # Number of cores per thread. Should be ppn/OMP_threads. 2 cores per thread is probably good
 export CORES_PER_THREAD=2
 # Start and end snapshot numbers
-export STARTNUM=598
+export STARTNUM=1
 export ENDNUM=600
 # Enter 0/1 for if snapshots are divided into subsnaps
-export MULTI_SNAP=0
+export MULTI_SNAP=1
 
 # Directory of snapshots
-#export SNAP_DIR="${MAIN_DIR}output/"
-export SNAP_DIR="/oasis/tscc/scratch/cchoban/gizmo_refactor_test/FIRE3_test/output/"
+export SNAP_DIR="${MAIN_DIR}output/"
 # Directory to output AHF data
 export OUTPUT_DIR="${MAIN_DIR}AHF_data/AHF_output/"
 # Directory of the AMIGA exe file
