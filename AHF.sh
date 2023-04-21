@@ -1,13 +1,13 @@
 #!/bin/sh
 #SBATCH -J AHF
 #SBATCH -p small
-#SBATCH -t 48:00:00
+#SBATCH -t 24:00:00
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH -A AST20016
+#SBATCH -A AST21010
 #SBATCH --mail-user=EMAIL
 #SBATCH --mail-type=all
-#SBATCH -o amiga.log%j
+#SBATCH -o amiga.log
 #SBATCH --export=ALL
 #SBATCH -D .
 
@@ -19,11 +19,16 @@ source ./module-reset.sh
 cd ./AHF/run/
 pwd
 
+# Set this to the AHF_data directory
 export MAIN_DIR=$1
+# Number of OMP Threads
 export OMP_NUM_THREADS=$2
+# Start and end snapshot numbers
 export STARTNUM=$3
 export ENDNUM=$4
+# Enter 0/1 for if snapshots are divided into subsnaps
 export MULTI_SNAP=$5
+
 
 # Directory of snapshots
 export SNAP_DIR="${MAIN_DIR}output/"

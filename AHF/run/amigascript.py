@@ -90,7 +90,7 @@ count = startno
 while(count <= Nsnap):
     if count in skip_snaps:
         print("Skipping ", count)
-        mycommand = 'rm AHF.input'+strno
+        mycommand = 'rm AHF.input'+str(count)
         os.system(mycommand)
         count += 1
         continue
@@ -101,7 +101,7 @@ while(count <= Nsnap):
     elif count<100:
         strno='0'+str(count)
     print('Doing ',strno)
-    mycommand = 'mpirun -N '+cores_per_thread+' '+amiga_dir+'AHF AHF.input'+strno
+    mycommand = 'ibrun '+amiga_dir+'AHF AHF.input'+strno
     print(mycommand)
     os.system(mycommand)
     # Clean up files after we are done with them
