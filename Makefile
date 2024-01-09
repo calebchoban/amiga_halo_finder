@@ -2,19 +2,20 @@
 
 # Main sim directory with output and AHF_data folders
 # Uncomment these lines and set to the MAIN_DIR of your simulation and no/yes (0/1) if the snapshots are split
-#MAIN_DIR='/scratch1/06185/tg854841/m12i_FIRE3_dust_new_run/'
-#MULTI_SNAPS=1
+MAIN_DIR='/N/scratch/cchoban/HiZ_dust/new_z5m11d/'
+MULTI_SNAPS=0
 
 # Start and end snapshot numbers
-STARTNUM=1
-ENDNUM=600
+STARTNUM=10
+ENDNUM=36
 # Number of snapshots each job will cover
-SNAPSTEP=10 # Make sure the range you give is divisible by the SNAPSTEP
-OMP_NUM_THREADS=14
+SNAPSTEP=26 # Make sure the range you give is divisible by the SNAPSTEP
+# Make sure to check if you need to set this in your job submission scripts (e.g. AHF.sh)
+OMP_NUM_THREADS=8
 
 # Start and end snap numbers for halo history.
-HH_STARTNUM=001
-HH_ENDNUM=600
+HH_STARTNUM=10
+HH_ENDNUM=68
 
 ###############################################################################
 # Don't change anything below
@@ -71,7 +72,7 @@ MergerTree:
 .PHONY: ahfHaloHistory
 ahfHaloHistory:
 	source ./module-reset.sh && cd $(HALOS_DIR) && python AHHScript.py $(OUTPUT_DIR) $(HH_STARTNUM) $(HH_ENDNUM)
-    # Uncomment this and comment out the line above if you are running for many halos
+	# Uncomment this and comment out the line above if you are running for many halos
 	#sbatch HaloHistory.sh $(HALOS_DIR) $(OMP_NUM_THREADS) $(OUTPUT_DIR) $(HH_STARTNUM) $(HH_ENDNUM)
 
 
@@ -92,3 +93,31 @@ MergerTree_TSCC:
 .PHONY: ahfHaloHistory_TSCC
 ahfHaloHistory_TSCC:
 	source ./TSCC/module-reset.sh && cd $(HALOS_DIR) && python AHHScript.py $(OUTPUT_DIR) $(HH_STARTNUM) $(HH_ENDNUM)
+
+
+.PHONY: AHF_BigRed
+AHF_BigRed:
+	cd BigRed; \
+	beginnum=$(STARTNUM) ; ((endnum=$(STARTNUM)+$(SNAPSTEP)-1)) ; while [[ $$endnum -le $(ENDNUM) ]] ; do \
+        	echo $$beginnum $$endnum ; \
+        	sbatch AHF.sh $(MAIN_DIR) $(OMP_NUM_THREADS) $$beginnum $$endnum $(MULTI_SNAPS) ; \
+        	((beginnum = beginnum + $(SNAPSTEP))) ; \
+       		((endnum = endnum + $(SNAPSTEP))) ; \
+	done
+
+
+.PHONY: compile_BigRed
+compile_BigRed:
+	source ./BigRed/module-reset.sh && cd AHF/compile && $(MAKE) compile_BigRed
+
+# Run MergerTree for AHF output
+.PHONY: MergerTree_BigRed
+MergerTree_BigRed:
+	cd BigRed && sbatch MergerTree.sh $(MAIN_DIR) $(OMP_NUM_THREADS)
+
+
+# Run ahfHaloHistory for AHF and MergerTree output
+.PHONY: ahfHaloHistory_BigRed
+ahfHaloHistory_BigRed:
+	source ./BigRed/module-reset.sh && cd $(HALOS_DIR) && python AHHScript.py $(OUTPUT_DIR) $(HH_STARTNUM) $(HH_ENDNUM)
+
