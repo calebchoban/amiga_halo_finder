@@ -38,15 +38,14 @@ filenames = []
 for file in os.listdir(dirc):
     if file.endswith(".AHF_mtree") and int(file[9:12]) >= startnum and int(file[9:12]) <= endnum:
         filenames += [os.path.join(dirc, file[:-6])]
-    # Need to tack on last snapshot since it wont have a merger tree file for it
-    if endnum == last_snap:
-        if file.startswith("snapshot_"+str(last_snap)) and file.endswith(".AHF_halos"):
-            filenames += [os.path.join(dirc, file[:-6])]
+    # Need to tack on last snapshot since it may not have a merger tree file for it
+    elif int(file[9:12])==endnum and file.endswith(".AHF_halos"):
+        filenames += [os.path.join(dirc, file[:-6])]
 
 filenames.sort()
 if len(filenames) < endnum-startnum:
-    print(len(filenames))
-    print(endnum-startnum+1)
+    print("Number of snaps with mergertree files:",len(filenames))
+    print("Number of files from given snapshot range:",endnum-startnum+1)
     print("Not all snapshots between start and end have had MergerTree run on them!")
     print("Run MergerTree on all files and then try ahfHaloHistory again")
     exit()
