@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 
 #SBATCH -J AHF
-#SBATCH -p general
-#SBATCH -t 08:00:00
-#SBATCH --nodes=1              # Total # of nodes 
-#SBATCH --ntasks-per-node=16    # Total # of mpi tasks per node = # of Cores per Node (128) / OMP_NUM_THREADS
-#SBATCH --cpus-per-task=8  # OMP_NUM_THREADS
-#SBATCH --mem=240GB
-#SBATCH -A r00380
+#SBATCH -p small
+#SBATCH -t 24:00:00
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -A AST21010
 #SBATCH --mail-user=EMAIL
-#SBATCH --mail-type=fail
-#SBATCH -o AHF.log
+#SBATCH --mail-type=all
+#SBATCH -o amiga.log
 #SBATCH --export=ALL
 #SBATCH -D .
 
@@ -24,7 +22,7 @@ amiga_dir = os.path.expanduser('~/codes/halo/amiga_halo_finder/')
 # starting snapshot number
 startno = 10
 # ending snapshot number
-endno = 12
+endno = 600
 # Set if the simulation breaks simulations into multiple snapshots
 multi_snap= False
 
@@ -42,7 +40,7 @@ num_OMP_THREADS = os.environ['SLURM_CPUS_PER_TASK']
 
 
 # This command will be environment specific
-run_command= 'srun --cpus-per-task='+str(num_OMP_THREADS)+' --ntasks-per-node='+str(num_task_per_node)+' --nodes='+str(num_nodes) + ' '
+run_command= 'ibrun'
 
 
 print("Snapshot Directory:", snap_dir)
@@ -130,7 +128,7 @@ while(count <= endno):
     elif count<100:
         strno='0'+str(count)
     print('Doing ',strno)
-
+    
     mycommand = run_command + amiga_dir +'AHF '+ outname + strno
     print(mycommand)
     os.system(mycommand)

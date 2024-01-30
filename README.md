@@ -1,17 +1,22 @@
 # AHF Runner and Halo Reader
 
-This example compiles and runs Amiga Halo Finder and include scripts to read AHF outputs. If running on TSCC checks notes at bottom first!
+This example downloads and compiles  Amiga Halo Finder and include scripts to run AHF and MergerTree for a few supercomputing environments.
 
-First, uncomment MAIN_DIR line in MakeFile and set to your directory. Then uncomment MULTI_SNAPS line and set to 1 if you simulation snapshots are broken up into multiple files or 0 otherwise. Also edit all of the job scripts (AHF.sh, HaloHistory.sh, and MergerTree.sh) to use your email address.
+## Downloading and Compiling AHF
 
-If needed, you can also edit the start and end snapshot numbers, the number snapshots each AHF job will deal with, and pick an OMP_NUM_THREADS number for your given number of cpu cores.
+First clone this repository into the following folder in your home directory.
+```console
+~/codes/halo/
+```
+If you clone this somewhere else you will need to edit the scripts accordingly.
 
-Second, download AHF:
+Next, run
 ```console
 make download
 ```
+to download the latest version of AHF from github.
 
-If you are using FIRE-3 (or recent FIRE-2) snapshots you need to edit some AHF code before compiling. Go to AHF/compile/ahf-v1.0-100/src/libio/io_gizmo_header.c and change these two lines
+If you are using FIRE-3 (or recent FIRE-2) snapshots you need to edit some AHF code before compiling. Go to ./amiga/src/libio/io_gizmo_header.c and change these two lines
 ```console
 hdf5_attribute = H5Aopen_name(hdf5_headergrp, "Omega0");
 ...
@@ -25,40 +30,54 @@ hdf5_attribute = H5Aopen_name(hdf5_headergrp, "Omega_Matter");
 hdf5_attribute = H5Aopen_name(hdf5_headergrp, "Omega_Lambda");
 ```
 
-Third, compile AHF:
+Then, from the folder corresponding to the supercomputer environment you are on, copy Makefile.config into ./AHF and activate.sh into ./.
+If your environment isn't listed you will have to make your own.
+
+Next run
 ```console
 make compile
 ```
+which will compile AHF, MergerTree, and ahfHaloHistory and make links to the executables.
 
 
-Then, submit the AHF job script:
+## Running AHF
+
+First you need to make the following folders in your simulation directory.
 ```console
-make AHF
+./halo/ahf/output/
+./halo/ahf/history/
 ```
+This is were the AHF/MergerTree outputs and ahfHaloHistory outputs will go respectively.
 
-Once the AHF jobs are done run MergerTree:
+### 1. AHF
+
+Copy the AHF job script into ./halo/ahf/history/ and submit the job:
 ```console
-make MergerTree
+qsub AHF.sh
 ```
-If this times out before finishing just keep running MergerTree. It will pick up wherever the last run left off at.
+If this times out before finishing just resubmit. It will pick up wherever the last run left off at.
+Note when dealing with large snapshots, you will want a lower number of NUM_OMP_THREADS to avoid running out of memory.
 
+### 2. MergerTree
 
-Depending on what snapshots you ran AHF for, you will need to edit the HH_STARTNUM and HH_ENDNUM values in the Makefile. By default the list starts at snapshot 001 and ends at snapshot 600. If you want to run halo history for certain halos you can list the halos' numbers in the halo_ids.txt file. The default is halos 0-5.
-
-Afterwards, make a copy of either FIRE2_ref_redshift_list.txt or FIRE3_ref_redshift_list.txt to ref_redshift_list.txt in the halos directory, depending on if this is a FIRE-2 or FIRE-3 simulation.
-
-Then you can run ahfHaloHistory:
+Copy the MergerTree job script into ./halo/ahf/history/ and submit the job:
 ```console
-make ahfHaloHistory
+qsub MergerTree.sh
 ```
+Ditto on the resubmission.
 
-Depending on what first snapshot you start, you may need to make halo historys for many halos to find the main halo at z=0. You can use the find_final_halo.py script to find which halo_XXXXXXX.dat file has the main halo at z=0.
+### 3. ahfHaloHistory
 
-The AHF and MergerTree output is located in AHF_output directory and the halo history is in the halos directory.
+Copy the ahfHaloHistory job script into ./halo/ahf/history/ 
+Set various parameters if you need such as the FIRE version (FIRE_VER), start and end snaps (starnum, endnum), and the number of halos you want to calculate the history for (numhalos).
+Then submit the job:
+```console
+qsub ahfHaloHistory.sh
+```
+Note that each halo history file is the history of halo N, were N is the designation of the halo at the first snap. This can cause issues sinces the primary halo at early times may not be the primary halo at simulation end. To determine which halo history (if any) represents the main halo, copy find_final_halo.py and run it.
 
-Note:
-- If running on TSCC run the TSCC version of each of the Makefile commands (i.e compile_TSCC, AHF_TSCC, MergerTree_TSCC, ahfHaloHistory_TSCC). You will also need to directly edit fields in the job submission scripts found in the TSCC/ directory.
+
+Notes:
 - By default AHF is not compiled with MPI, if you want to use MPI add the -DWITH_MPI flag to the DEFINEFLAGS list in Makefile.config, but be warned that this will cause the halo ID's to be randomized and you will have to edit the halo_ids file after running AHF. Also all AHF files for each snapshot are broken up for each MPI task.
-- If you are running ahfHaloHistory for many halos, edit the Makefile so ahfHaloHistory submits a job instead of running the code directly.
 
 
