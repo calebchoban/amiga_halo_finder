@@ -5,7 +5,7 @@
 #SBATCH -t 03:00:00
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH --mem=240GB
+#SBATCH --mem=120GB
 #SBATCH -A r00380
 #SBATCH --mail-user=EMAIL
 #SBATCH --mail-type=fail

@@ -21,7 +21,7 @@ from shutil import copyfile
 
 amiga_dir = os.path.expanduser('~/codes/halo/amiga_halo_finder/')
 # FIRE Version used for reference snapshots and number of total snaps
-FIRE_VER = 3
+FIRE_VER = 2
 # Number of halos from zero to numhalos you want to run ahfHaloHistory for
 numhalos=10
 

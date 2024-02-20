@@ -24,7 +24,7 @@ amiga_dir = os.path.expanduser('~/codes/halo/amiga_halo_finder/')
 # starting snapshot number
 startno = 10
 # ending snapshot number
-endno = 12
+endno = 500
 # Set if the simulation breaks simulations into multiple snapshots
 multi_snap= False
 
