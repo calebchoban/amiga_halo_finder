@@ -22,9 +22,9 @@ import re
 # directory for AHF executable
 amiga_dir = os.path.expanduser('~/codes/halo/amiga_halo_finder/')
 # starting snapshot number
-startno = 10
+startnum = 10
 # ending snapshot number
-endno = 500
+endnum = 500
 # Set if the simulation breaks simulations into multiple snapshots
 multi_snap= False
 
@@ -48,8 +48,8 @@ run_command= 'srun --cpus-per-task='+str(num_OMP_THREADS)+' --ntasks-per-node='+
 print("Snapshot Directory:", snap_dir)
 print("Output Directory:", output_dir)
 print("Amiga Directory:", amiga_dir)
-print("First Snapshot:", startno)
-print("Final Snapshot:", endno)
+print("First Snapshot:", startnum)
+print("Final Snapshot:", endnum)
 print("Multisnapshots:", multi_snap)
 print("Number of Nodes:", num_nodes)
 print("Num of Task per Node:", num_task_per_node)
@@ -78,8 +78,8 @@ f.close()
 
 inputlist = []
 
-count = startno
-while(count <= endno):
+count = startnum
+while(count <= endnum):
     strno = str(count)
     if count<10:
         strno='00'+str(count)
@@ -115,8 +115,8 @@ while(count <= endno):
     count = count + 1
     inputlist.append(foutname)
 
-count = startno
-while(count <= endno):
+count = startnum
+while(count <= endnum):
     if count in skip_snaps:
         print("Skipping ", count)
         mycommand = 'rm '+outname+str(count)
