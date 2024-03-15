@@ -48,7 +48,7 @@ try:
         snap_ver = 2
     if (snap_ver!=FIRE_VER):
         print("Provided FIRE version does not match with snapshot version")
-        print("Provided: FIRE-%i \t Snap: FIRE-%i"%{FIRE_VER,snap_ver})
+        print("Provided: FIRE-%i \t Snap: FIRE-%i"%(FIRE_VER,snap_ver))
         print("Will override with snapshot version")
         FIRE_VER=snap_ver
     else:
