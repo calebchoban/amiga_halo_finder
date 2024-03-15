@@ -52,7 +52,7 @@ This is were the AHF/MergerTree outputs and ahfHaloHistory outputs will go respe
 ### 1. AHF
 
 Copy the AHF job script into ./halo/ahf/.
-Set various parameters if you need such as start and end snaps (startno, endno) and if there are multiple file for each snapshot (multi_snap). Then submit the job:
+Set various parameters if you need such as start and end snaps (startnum, endnum) and if there are multiple file for each snapshot (multi_snap). Then submit the job:
 ```console
 qsub AHF.sh
 ```
@@ -70,18 +70,16 @@ Ditto on the resubmission.
 ### 3. ahfHaloHistory
 
 Copy the ahfHaloHistory job script into ./halo/ahf/history/.
-Set various parameters if you need such as the FIRE version (FIRE_VER), start and end snaps (starnum, endnum), and the number of halos you want to calculate the history for (numhalos).
+Set various parameters if you need such as the FIRE version (FIRE_VER) and the number of halos you want to calculate the history for (numhalos).
 Then submit the job:
 ```console
 qsub ahfHaloHistory.sh
 ```
-Note that each halo history file is the history of halo N, were N is the designation of the halo at the first snap. This can cause issues sinces the primary halo at early times may not be the primary halo at simulation end. To determine which halo history (if any) represents the main halo, copy find_final_halo.py into ./halo/ahf/ and run it:
-```console
-python find_final_halo.py
-```
-to create a new file in history labelled main_halo.dat which is the history of the primary halo at the last snap.
+This will automatically determine the start and end snap numbers based on the existing AHF_profile and Merger Tree files and let you know if any snaps were missed.
+Note that each halo history file is the history of halo N, were N is the designation of the halo at the first snap. This can cause issues sinces the primary halo at early times may not be the primary halo at simulation end. ahfHaloHistory.sh will determine which halo history (if any) represents the main halo, make a copy of the file called **halo_main.dat**, and smooth out the file by adding snap numbers.
 
 Notes:
 - By default AHF is not compiled with MPI, if you want to use MPI add the -DWITH_MPI flag to the DEFINEFLAGS list in Makefile.config, but be warned that this will cause the halo ID's to be randomized and you will have to edit the halo_ids file after running AHF. Also all AHF files for each snapshot are broken up for each MPI task.
+- MergerTree and ahfHaloHistory can be quick so you can also just call **python MergerTree.sh** and **python ahfHaloHistory.sh** to run them.
 
 
