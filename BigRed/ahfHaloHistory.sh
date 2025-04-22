@@ -27,7 +27,12 @@ amiga_dir = os.path.expanduser('~/codes/halo/amiga_halo_finder/')
 # FIRE Version used for reference snapshots and number of total snaps
 FIRE_VER = 2
 # Number of halos from zero to numhalos you want to run ahfHaloHistory for
-numhalos=10
+numhalos=4
+# If False, an error will be thrown if any snapshots are missing a MergerTree file.
+# Useful since MergerTree can randomly not work on some snapshots.
+# Set this to True if you only ran AHF and MergerTree on a select number of 
+# snapshots (i.e every 5th snapshot)
+skip_missing_merger_files=True
 
 particle_dirc = './output/'
 output_dir = './history/'
@@ -111,9 +116,16 @@ file = re.split('/',filenames[-1])[-1]
 endnum = int(re.search('_([0-9]{3}).', file).group(1))
 print("Starting and ending snapnums detected:",startnum,endnum)
 
+all_snap_nums = []
+for filename in filenames:
+    file = re.split('/',filename)[-1]
+    all_snap_nums += [int(re.search('_([0-9]{3}).', file).group(1))]
+
+print("Number snapshots detected:",len(all_snap_nums))
+print(all_snap_nums)
 
 
-if len(filenames) < endnum-startnum:
+if len(filenames) < endnum-startnum and not skip_missing_merger_files:
     print("Number of snaps with mergertree files:",len(filenames))
     print("Number of files from given snapshot range:",endnum-startnum+1)
     print("Not all snapshots between start and end have had MergerTree run on them!")
@@ -131,16 +143,8 @@ with open(prefix_list, 'w') as f:
 redshifts = []
 with open(ref_redshifts, 'r') as f:
     for i, line in enumerate(f.readlines()):
-        if i >= startnum and i <= endnum:
+        if i >= startnum and i <= endnum and i in all_snap_nums:
             redshifts += [line]
-
-
-# Get list of redshifts to be used based on start and end snap numbers
-redshifts = []
-with open(ref_redshifts, 'r') as f:
-	for i, line in enumerate(f.readlines()):
-		if i >= startnum and i <= endnum:
-			redshifts += [line]
 
 redshift_list  = 'redshift_list.txt'
 # Delete temp file if it already exists
@@ -186,13 +190,12 @@ for file in files:
             column_names[column_names.index('Mhalo')] = 'Mvir'
         # Insert snapnum data column and redshift column names (AHF doesn't do this on its own)
         column_names = ['snum','redshift'] + column_names
-        # Make snapshot numbers column
-        snapnums = np.arange(startnum,endnum+1)
-    
-        new_data = np.insert(data,0,snapnums,axis=0)
+        # Make snapshot numbers column  
+        new_data = np.insert(data,0,all_snap_nums,axis=0)
         # Keep it somewhat readable by eye
         fmts = ['%i','%1.6f','%i','%i','%i']+['%1.4e']*(len(column_names)-5)
         np.savetxt(new_name,new_data.transpose(),delimiter='\t', header='\t'.join(column_names),fmt=fmts,comments='')
         exit()
 
 print("No halo file has the main halo at last snapshot.")
+
