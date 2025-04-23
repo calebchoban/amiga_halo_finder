@@ -195,7 +195,27 @@ for file in files:
         # Keep it somewhat readable by eye
         fmts = ['%i','%1.6f','%i','%i','%i']+['%1.4e']*(len(column_names)-5)
         np.savetxt(new_name,new_data.transpose(),delimiter='\t', header='\t'.join(column_names),fmt=fmts,comments='')
-        exit()
+    else:
+        new_name = './history/halo_%i.dat'%IDs[-1]
+        print("Creating new file called %s and smoothing file"%new_name)
+        data = np.loadtxt(file, unpack=True)
+        # Clean up column names
+        column_names = list(np.genfromtxt(file,skip_header=1,max_rows = 1,dtype=str,comments='@'))
+        column_names[0] = 'ID(1)'
+        if '(' in column_names[0]: 
+            column_names = [name[:name.index('(')] for name in column_names]
+        # Revert back to old names for new AHF files
+        if 'Rhalo' in column_names:
+            column_names[column_names.index('Rhalo')] = 'Rvir'
+            column_names[column_names.index('Mhalo')] = 'Mvir'
+        # Insert snapnum data column and redshift column names (AHF doesn't do this on its own)
+        column_names = ['snum','redshift'] + column_names
+        # Make snapshot numbers column  
+        new_data = np.insert(data,0,all_snap_nums,axis=0)
+        # Keep it somewhat readable by eye
+        fmts = ['%i','%1.6f','%i','%i','%i']+['%1.4e']*(len(column_names)-5)
+        np.savetxt(new_name,new_data.transpose(),delimiter='\t', header='\t'.join(column_names),fmt=fmts,comments='')
+
 
 print("No halo file has the main halo at last snapshot.")
 
